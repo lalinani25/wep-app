@@ -53,11 +53,16 @@
             text-decoration: none;
             cursor: pointer;
         }
-        h3{
+
+        h3 {
             text-align: center;
         }
 
-        #signUp{
+        #signUp {
+            justify-content: center;
+        }
+
+        #info{
             text-align: center;
         }
     </style>
@@ -72,17 +77,18 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3>Create Account</h3>
-            <label for="name">Name</label> <br>
-            <input type="name" id="name" name="name"><br>
-            <label for="username">Username</label> <br>
-            <input type="username" id="username" name="username"><br>
-            <label for="email">Email:</label> <br>
-            <input type="email" id="email" name="email"><br>
-            <label for="password">Password</label> <br>
-            <input type="password" id="password" name="password"><br>
-            <label for="school">School</label> <br>
-            <input type="school" id="school" name="school"><br>
-
+            <div id="info">
+                <label for="name">Name</label> <br>
+                <input type="name" id="name" name="name"><br>
+                <label for="username">Username</label> <br>
+                <input type="username" id="username" name="username"><br>
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" name="email"><br>
+                <label for="password">Password</label> <br>
+                <input type="password" id="password" name="password"><br>
+                <label for="school">School</label> <br>
+                <input type="school" id="school" name="school"><br>
+            </div>
             <button id="signUp">Sign Up</button>
 
 
