@@ -31,12 +31,11 @@
         /* Modal Content/Box */
         .modal-content {
             background-color: #fefefe;
-            text-align: center;
             margin: 15% auto;
             /* 15% from the top and centered */
             padding: 20px;
             border: 1px solid #888;
-            width: 40%;
+            width: 30%;
             /* Could be more or less, depending on screen size */
         }
 
@@ -54,6 +53,13 @@
             text-decoration: none;
             cursor: pointer;
         }
+        h3{
+            text-align: center;
+        }
+
+        #signUp{
+            text-align: center;
+        }
     </style>
     <h1>Study Buddy</h1>
 
@@ -65,6 +71,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
+            <h3>Create Account</h3>
             <label for="name">Name</label> <br>
             <input type="name" id="name" name="name"><br>
             <label for="username">Username</label> <br>
@@ -74,7 +81,9 @@
             <label for="password">Password</label> <br>
             <input type="password" id="password" name="password"><br>
             <label for="school">School</label> <br>
-            <input type="school" id="school" name="school">
+            <input type="school" id="school" name="school"><br>
+
+            <button id="signUp">Sign Up</button>
 
 
         </div>
