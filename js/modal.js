@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function () {
+    
+    const createAccountForm = document.getElementById('createAccountForm');
+    const message = document.getElementById('message');
+
 createAccountForm.addEventListener('signup', async function (event) {
     event.preventDefault();
 
@@ -54,4 +59,4 @@ async function createAccount(userData) {
         mssg.style.color = 'red';
     }
 }
-
+})
