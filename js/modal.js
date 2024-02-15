@@ -1,28 +1,57 @@
-async function fetchUsingDataFromForm() {
-    const mssg8 = document.querySelector("#message8")
-    const input = document.querySelector("#input8")
-    const url = "https://thankful-plant-0f567c30f.4.azurestaticapps.net/createAccount.html"
-    const data = {
-    code: input.value
+createAccountForm.addEventListener('signup', async function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const school = document.getElementById('school').value;
+ 
+
+    const userData = {
+        name: name,
+        username: username,
+        email: email,
+        password: password,
+        school: school,
+    };
+
+});
+
+async function createAccount(userData) {
+    const mssg = document.querySelector("#message");
+    const url = "https://studdy-buddy-api-server.azurewebsites.net/user";
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (response.ok) {
+            try {
+                const data = await response.json();
+                mssg.innerHTML = data.message;
+                message.textContent = 'Verification email has been sent to ' + userData.email;
+                message.style.color = 'green';
+            } catch (error) {
+                console.error('Error parsing JSON response:', error.message);
+                // Ignore error parsing JSON
+                mssg.innerHTML = 'Verification email has been sent to ' + userData.email;
+                mssg.style.color = 'green';
+            }
+        } else {
+            const errorData = await response.json();
+            mssg.innerHTML = "Error: " + errorData.message;
+            mssg.style.color = 'red';
+        }
+    } catch (error) {
+        console.error('Error:', error.message);
+        mssg.innerHTML = "Error: " + error.message;
+        mssg.style.color = 'red';
     }
-    const options = {
-    method: "POST",
-    headers: { "Content-Type": "createAccount/json" },
-    body: JSON.stringify(data)
-    }
-    let response = await fetch(url, options)
-    if (response.status == 200) {
-    const obj = await response.json()
-    mssg8.innerHTML = obj.message
-    }
-    else if (response.status == 401) {
-    const obj = await response.json()
-    mssg8.innerHTML = "Error: " + obj.message
-    }
-    else if (response.status == 400) {
-    mssg8.innerHTML = "Server error"
-    }
-   }
-   document.querySelector("#signUp").addEventListener("click",
-   fetchUsingDataFromForm)
-   
+}
+
