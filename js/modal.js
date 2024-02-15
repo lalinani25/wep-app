@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const createAccountForm = document.getElementById('createAccountForm');
     const message = document.getElementById('message');
 
-createAccountForm.addEventListener('signup', async function (event) {
+createAccountForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
     const name = document.getElementById('name').value;
