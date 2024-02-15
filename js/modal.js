@@ -23,6 +23,6 @@ async function fetchUsingDataFromForm() {
     mssg8.innerHTML = "Server error"
     }
    }
-   document.querySelector("#button8").addEventListener("click",
+   document.querySelector("#signUp").addEventListener("click",
    fetchUsingDataFromForm)
    
