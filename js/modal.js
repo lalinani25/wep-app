@@ -1,8 +1,9 @@
 
-    const createAccountForm = document.getElementById('signUp');
+    const createAccountForm = document.getElementById('myBtn');
+    const signUp = document.getElementById('signUp');
     const message = document.getElementById('message');
 
-    createAccountForm.addEventListener('submit', async function (event) {
+    createAccountForm.addEventListener('click', async function (event) {
         event.preventDefault();
 
         const name = document.getElementById('name').value;
