@@ -1,6 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const signUp = document.getElementById('signUp');
-    const message = document.getElementById('message');
+
+    const signUp = document.querySelector('#signUp');
+    const message = document.querySelector("p");
+
+
+    signUp.addEventListener('click', async function (event) {
 
     const name = document.querySelector('#name').value;
     const username = document.querySelector('#username').value;
@@ -9,19 +12,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const school = document.querySelector('#school').value;
 
 
-    async function createAccount(user) {
-        const mssg = document.querySelector("#message");
+
+    const userData = {
+        name: name,
+        username: username,
+        email: email,
+        password: password,
+        school: school,
+    };
+  
+     createAccount(userData);
+
+    });
+
+    async function createAccount(userData) {
+        const mssg = document.querySelector("p");
         const url = "https://studdy-buddy-api-server.azurewebsites.net/user";
-
-        const userData = {
-            name: name,
-            username: username,
-            email: email,
-            password: password,
-            school: school,
-        };
-      
-
+        console.log("test")
         try {
             const response = await fetch(url, {
                 method: "POST",
@@ -53,13 +60,3 @@ document.addEventListener('DOMContentLoaded', function () {
             mssg.style.color = 'red';
         }
     }
-
-    signUp.addEventListener('click', async function (event) {
-        event.preventDefault();
-
-
-        signUp.addEventListener("click",createAccount);
-    
-    });
-
-});

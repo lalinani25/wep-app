@@ -3,7 +3,6 @@
 <head>
     <title> Study Buddy</title>
     <link href="css/createAccount.css" rel="stylesheet" />
-    <script src="js/modal.js"></script>
 </head>
 
 <body>
@@ -12,6 +11,7 @@
 
     <div class="modal-content">
         <h3>Create Account</h3>
+        <p>Test</p>
         <form action="" method="post" class="form" id="form">
             <div id="info">
                 <label for="name">Name</label> <br>
@@ -25,13 +25,13 @@
                 <label for="school">School</label> <br>
                 <input type="school" id="school" name="school"><br>
                 <br>
-                <div class="form-example">
-                    <input type="submit" id="signUp" value="Sign Up" />
-                  </div>
+                <button type="button" class="signUp" id="signUp">Sign Up
+                </button>
             </div>
         </form>
     </div>
 
+    <script type="module" src="js/createAccount.js"></script>
 </body>
 
 </html>
