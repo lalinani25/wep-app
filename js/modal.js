@@ -20,10 +20,9 @@
             school: school,
         };
 
-        document.getElementById("signUp").addEventListener("click",
-        createAccount)
-
     });
+
+    createAccount.addEventListener("click",createAccount);
 
     async function createAccount(userData) {
         const mssg = document.querySelector("#message");
