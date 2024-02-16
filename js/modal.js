@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
 
     const createAccountForm = document.getElementById('signUp');
     const message = document.getElementById('message');
@@ -21,7 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
             school: school,
         };
 
-        createAccount(userData);
+        document.getElementById("signUp").addEventListener("click",
+        createAccount)
 
     });
 
@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     message.style.color = 'green';
                 } catch (error) {
                     console.error('Error parsing JSON response:', error.message);
-                    // Ignore error parsing JSON
                     mssg.innerHTML = 'Verification email has been sent to ' + userData.email;
                     mssg.style.color = 'green';
                 }
@@ -61,5 +60,3 @@ document.addEventListener('DOMContentLoaded', function () {
             mssg.style.color = 'red';
         }
     }
-
-})
