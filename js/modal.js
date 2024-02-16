@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
+    const createAccountModal = document.getElementById('modal-content');
     const createAccountForm = document.getElementById('createAccountForm');
     const message = document.getElementById('message');
 
@@ -26,6 +26,8 @@ createAccountForm.addEventListener('submit', async function (event) {
         password: password,
         school: school,
     };
+
+    createAccount(userData);
 
 });
 
