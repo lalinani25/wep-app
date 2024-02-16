@@ -2,9 +2,7 @@
     const createAccountForm = document.getElementById('signUp');
     const message = document.getElementById('message');
 
-    createAccountForm.addEventListener('submit', async function (event) {
-        event.preventDefault();
-
+    
         const name = document.getElementById('name').value;
         const username = document.getElementById('username').value;
         const email = document.getElementById('email').value;
@@ -20,10 +18,7 @@
             school: school,
         };
 
-        createAccount.addEventListener("click",createAccount);
-
-
-    });
+    createAccountForm.addEventListener("click",createAccount);
 
     async function createAccount(userData) {
         const mssg = document.querySelector("#message");
