@@ -1,31 +1,22 @@
-
-    const createAccountForm = document.getElementById('myBtn');
+document.addEventListener('DOMContentLoaded', function () {
     const signUp = document.getElementById('signUp');
     const message = document.getElementById('message');
 
-    createAccountForm.addEventListener('click', async function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const username = document.getElementById('username').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const school = document.getElementById('school').value;
+    const name = document.querySelector('#name').value;
+    const username = document.querySelector('#username').value;
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+    const school = document.gquerySelectory('#school').value;
 
 
-        const userData = {
-            name: name,
-            username: username,
-            email: email,
-            password: password,
-            school: school,
-        };
-
-        createAccountForm.addEventListener("click",createAccount);
-
-
-    });
-
+    const userData = {
+        name: name,
+        username: username,
+        email: email,
+        password: password,
+        school: school,
+    };
+  
     async function createAccount(userData) {
         const mssg = document.querySelector("#message");
         const url = "https://studdy-buddy-api-server.azurewebsites.net/user";
@@ -61,3 +52,13 @@
             mssg.style.color = 'red';
         }
     }
+
+    signUp.addEventListener('click', async function (event) {
+        event.preventDefault();
+
+
+        createAccountForm.addEventListener("click",createAccount);
+    
+    });
+
+});
