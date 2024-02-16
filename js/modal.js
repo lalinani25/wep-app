@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const username = document.querySelector('#username').value;
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
-    const school = document.gquerySelectory('#school').value;
+    const school = document.querySelectory('#school').value;
 
 
     const userData = {
