@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const createAccountForm = document.getElementById('createAccountForm');
     const message = document.getElementById('message');
 
+    window.onclick = function (event) {
+        if (event.target == createAccountModal) {
+            createAccountModal.style.display = 'none';
+        }
+    }
+
 createAccountForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
