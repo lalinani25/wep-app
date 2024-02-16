@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function createAccount(userData) {
         const mssg = document.querySelector("#message");
-        const url = "http://localhost:3000/fetchuser";
+        const url = "http://localhost:3000/user";
 
         try {
             const response = await fetch(url, {
