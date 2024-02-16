@@ -9,17 +9,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const school = document.querySelector('#school').value;
 
 
-    const userData = {
-        name: name,
-        username: username,
-        email: email,
-        password: password,
-        school: school,
-    };
-  
-    async function createAccount(userData) {
+    async function createAccount(user) {
         const mssg = document.querySelector("#message");
         const url = "https://studdy-buddy-api-server.azurewebsites.net/user";
+
+        const userData = {
+            name: name,
+            username: username,
+            email: email,
+            password: password,
+            school: school,
+        };
+      
 
         try {
             const response = await fetch(url, {
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
 
-        createAccountForm.addEventListener("click",createAccount);
+        signUp.addEventListener("click",createAccount);
     
     });
 
