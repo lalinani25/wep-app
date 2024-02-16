@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const createAccountModal = document.getElementById('modal-content');
-    const createAccountForm = document.getElementById('createAccountForm');
+    const createAccountForm = document.getElementById('form');
     const message = document.getElementById('message');
 
     window.onclick = function (event) {
