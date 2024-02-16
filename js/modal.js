@@ -1,29 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const createAccountModal = document.getElementById('modal-content');
+
     const createAccountForm = document.getElementById('signUp');
     const message = document.getElementById('message');
-
-    createAccountForm.addEventListener('submit', async function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const username = document.getElementById('username').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const school = document.getElementById('school').value;
-
-
-        const userData = {
-            name: name,
-            username: username,
-            email: email,
-            password: password,
-            school: school,
-        };
-
-        createAccount(userData);
-
-    });
 
     async function createAccount(userData) {
         const mssg = document.querySelector("#message");
@@ -61,4 +39,27 @@ document.addEventListener('DOMContentLoaded', function () {
             mssg.style.color = 'red';
         }
     }
+
+    createAccountForm.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const school = document.getElementById('school').value;
+
+
+        const userData = {
+            name: name,
+            username: username,
+            email: email,
+            password: password,
+            school: school,
+        };
+
+        createAccount(userData);
+
+    });
+
 })
