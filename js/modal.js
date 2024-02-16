@@ -1,13 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const createAccountModal = document.getElementById('modal-content');
-    const createAccountForm = document.getElementById('form');
+    const createAccountForm = document.getElementById('signUp');
     const message = document.getElementById('message');
-
-    window.onclick = function (event) {
-        if (event.target == createAccountModal) {
-            createAccountModal.style.display = 'none';
-        }
-    }
 
     createAccountForm.addEventListener('submit', async function (event) {
         event.preventDefault();
