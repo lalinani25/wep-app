@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function createAccount(userData) {
         const mssg = document.querySelector("#message");
-        const url = "https://studdy-buddy-api-server.azurewebsites.net/user";
+        const url = "http://localhost:3000/fetchuser";
 
         try {
             const response = await fetch(url, {
