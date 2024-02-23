@@ -64,6 +64,11 @@ body {
     border-style: double;
 }
 
+p {
+    text-align: center;
+    color: #bfb1ce;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

@@ -56,7 +56,7 @@ async function createAccount(userData) {
                 const data = await response.json();
                 mssg.innerHTML = data.message;
                 message.textContent = 'Verification email has been sent to ' + userData.email;
-                message.style.color = 'green';
+                message.style.color = 'white';
             } catch (error) {
                 console.error('Error parsing JSON response:', error.message);
                 mssg.innerHTML = 'Verification email has been sent to ' + userData.email;
