@@ -1,6 +1,6 @@
 const createLogoutBtn = document.querySelector('#logout');
 
-createLogoutBtn.addEventListener('click', async function (event){
+createLogoutBtn.addEventListener('click', async function (event) {
 
     const token = localStorage.getItem("token");
 
@@ -10,7 +10,8 @@ createLogoutBtn.addEventListener('click', async function (event){
     const options = {
         method: "PATCH",
         headers: {
-            "Authorization": `Bearer ${token}`}
+            "Authorization": `Bearer ${token}`
+        }
     }
 
 

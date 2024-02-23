@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <title> Study Buddy</title>
+    <link href="css/createStudygroup.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <ul>
+        <li><a class="active" href="main.html">MAIN</a></li>
+        <li><a href="createStudygroup.html">CREATE STUDYGROUP</a></li>
+        <li style="float:right" id="logout" type="button"><a>LOG OUT</a></li>
+    </ul>
+
+    <div class="modal-content">
+        <h2>Create Study Group</h2>
+        <form action="" method="post" class="form" id="form">
+            <div id="info">
+
+                <label for="name">NAME</label> <br>
+                <input type="text" id="name" name="name"><br>
+
+                <label for="is_public">Public</label> <br>
+                <input type="text" id="is_public" name="is_public" placeholder="true or false"><br>
+
+                <label for="max_participants">MAXIMUM NUMBER OF PARTICIPANTS</label> <br>
+                <input type="text" id="max_participants" name="max_participants"><br>
+
+                <label for="date">START DATE</label> <br>
+                <input type="text" id="start_date" name="start_date" placeholder="Ex: 2024-02-22"><br>
+
+                <label for="date">END DATE</label> <br>
+                <input type="text" id="end_date" name="end_date" placeholder="Ex: 2024-02-22"><br>
+
+                <br>
+                <div id="meeting_time">
+                    <label for="day">MEETING DAY</label> <br>
+                    <select id="day" name="day">
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+
+                    <label for="meeting_time">MEETING TIME</label> <br>
+                    <input type="text" id="time" name="time" placeholder="Ex: 10:00">
+
+                    <label for="location">MEETING LOCATION</label> <br>
+                    <input type="text" id="location" name="location">
+
+                    <button type="button" class="addMeetingInfo" id="addMeetingInfo">+
+                    </button> <br>
+                </div>
+                <br>
+                <label for="description">STUDYGROUP DESCRIPTION</label> <br>
+                <input type="text" id="description" name="description"><br>
+                <br>
+
+                <label for="school">SCHOOL</label> <br>
+                <input type="text" id="school" name="school"><br>
+
+                <label for="course_number">COURSE NUMBER</label> <br>
+                <input type="text" id="course_number" name="course_number"><br>
+                <br>
+                <button type="button" class="create" id="create">Create
+                </button>
+            </div>
+        </form>
+        <p></p>
+    </div>
+
+    <script type="module" src="js/createStudygroup.js"></script>
+    <script type="module" src="js/logout.js"></script>
+</body>
+
+</html>

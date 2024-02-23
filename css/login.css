@@ -1,14 +1,3 @@
-input[type=text],
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
 input[id="email"],
 select {
   width: 100%;
@@ -31,7 +20,7 @@ select {
   box-sizing: border-box;
 }
 
-button[id='signUp'] {
+button[type=button] {
   width: 100%;
   background-color: #1c122bdc;
   color: white;
@@ -42,8 +31,10 @@ button[id='signUp'] {
   cursor: pointer;
 }
 
-button[id='signUp']:hover {
-  background-color: #1c122b;
+
+p {
+  color: aliceblue;
+  text-align: center;
 }
 
 div {
@@ -51,10 +42,6 @@ div {
   background-color: #7b6691;
   padding: 20px;
 
-}
-
-#majors_box {
-  border-style: double;
 }
 
 /* Modal Content/Box */
@@ -81,9 +68,6 @@ body {
   text-align: center;
 }
 
-#meeting_time {
-  border-style: double;
-}
 
 ul {
   list-style-type: none;

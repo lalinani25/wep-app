@@ -2,25 +2,33 @@
 
 <head>
     <title> Study Buddy</title>
-    <link href="css/createAccount.css" rel="stylesheet" />
+    <link href="css/login.css" rel="stylesheet" />
 </head>
 
 <body>
 
-    <h1>Create Account</h1>
+  
+    <ul>
+        <li><a class="active" href="index.html">HOME</a></li>
+        <li><a class="active" href="createAccount.html">CREATE ACCOUNT</a></li>
+      </ul>
+
 
     <div class="modal-content">
-        <h3>Log In Page</h3>
+        
+        <h2>LOGIN</h2>
+
         <form action="" method="post" class="form" id="form">
             <div id="info">
-                <label for="email">Email:</label> <br>
+                <label for="email">EMAIL</label> <br>
                 <input type="email" id="email" name="email"><br>
-                <label for="password">Password</label> <br>
+                <label for="password">PASSWORD</label> <br>
                 <input type="password" id="password" name="password"><br>
                 <br>
                     <button type="button" id="login">Log In</button> 
                
             </div>
+             <p id="errorMssg"></p>
         </form>
     </div>
 
