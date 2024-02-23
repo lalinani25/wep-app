@@ -85,6 +85,9 @@ body {
   border-style: double;
 }
 
+p{
+  text-align: center;
+}
 ul {
   list-style-type: none;
   margin: 0;

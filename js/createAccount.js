@@ -60,7 +60,7 @@ async function createAccount(userData) {
             } catch (error) {
                 console.error('Error parsing JSON response:', error.message);
                 mssg.innerHTML = 'Verification email has been sent to ' + userData.email;
-                mssg.style.color = 'green';
+                mssg.style.color = 'white';
             }
         } else {
             const errorData = await response.json();
