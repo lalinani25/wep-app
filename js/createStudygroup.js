@@ -77,8 +77,6 @@ async function createStudygroup(studygroupData) {
             mssg.innerHTML = 'Study group was successfully created!';
             mssg.style.color = 'green';
 
-            location.href = "main.html"
-
         } else {
             const errorData = await response.json();
             mssg.innerHTML = "Error: " + errorData.message;
