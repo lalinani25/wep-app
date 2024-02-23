@@ -13,7 +13,7 @@ signUp.addEventListener('click', async function (event) {
 
     const majors = [];
 
-    console.log(meeting)
+    console.log(majors)
 
 
     document.querySelector("#addMajors").addEventListener('click', async function (event) {
@@ -22,10 +22,9 @@ signUp.addEventListener('click', async function (event) {
         majors.push(major);
         console.log(majors)
         document.querySelector('#major').value = "";
-
-
     });
 
+    majors.splice(0, 1)
     const userData = {
         name: name,
         username: username,
