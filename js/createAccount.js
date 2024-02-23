@@ -16,7 +16,7 @@ signUp.addEventListener('click', async function (event) {
     console.log(majors)
 
 
-    document.querySelector("#addMajors").addEventListener('click', async function (event) {
+    document.querySelector("#addMajor").addEventListener('click', async function (event) {
         console.log("hello")
         const major = document.querySelector('#majors').value;
         majors.push(major);
