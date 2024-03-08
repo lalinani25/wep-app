@@ -1,74 +1,9 @@
-input[type=text],
-select {
-    width: 100%;
-    padding: 5px 20px;
-    margin: 5px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-
-button[id='create'] {
-    width: 100%;
-    background-color: #1c122bdc;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button[id='create']:hover {
-    background-color: #1c122b;
-}
-
-button[id='logout']:hover {
-    align-items: center;
-}
-
-div {
-    border-radius: 5px;
-    background-color: #7b6691;
-    padding: 20px;
-
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #1c122b;
-    margin: 4% auto;
-    /* 15% from the top and centered */
-    padding: 10px;
-    border: 1px solid #888;
-    width: 50%;
-    /* Could be more or less, depending on screen size */
-}
-
-h2 {
-    text-align: center;
-    color: #bfb1ce;
-}
-
+/*body*/
 body {
     background-color: #bfb1ce;
 }
 
-#info {
-    text-align: center;
-}
-
-#meeting_time {
-    border-style: double;
-}
-
-p {
-    text-align: center;
-    color: #bfb1ce;
-}
-
+/*Navigation Bar*/
 ul {
     list-style-type: none;
     margin: 0;
@@ -102,12 +37,32 @@ li a:hover:not(.active) {
     background-color: #1c122b;
 }
 
+/*Search For Studygroup Content*/
+#info{
+    border-radius: 5px;
+    background-color: #7b6691;
+    padding: 20px;
+    text-align: center;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*Search for Studygroup modal*/
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
-    left: -18.5;
+    left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
@@ -116,8 +71,8 @@ li a:hover:not(.active) {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
   
- /* Modal Content */
- .modal_content {
+  /* Modal Content */
+  .modal_content {
     background-color: #1c122b;
     margin: 4% auto;
     /* 15% from the top and centered */
@@ -141,6 +96,7 @@ li a:hover:not(.active) {
     cursor: pointer;
   }
 
+  /*Search button*/
   button[id='search_btn'] {
     width: 100%;
     background-color: #1c122bdc;
@@ -154,4 +110,27 @@ li a:hover:not(.active) {
 
 button[id='search_btn']:hover {
     background-color: #1c122b;
+}
+
+table{
+    text-align: center;
+    margin-top: 70px;
+    padding: 10px;
+    background-color:  #1c122b;
+    
+}
+
+th {
+    background-color: #9a8aab;
+    color:#1c122b;
+  }
+  tr {
+    background-color: #9a8aab;
+    color:#1c122b;
+  }
+  
+h2{
+    text-align: center;
+    color: #1c122b;
+    margin-top: 50px;
 }

@@ -1,5 +1,5 @@
 <html lang="en">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
     <title> Study Buddy</title>
     <link href="css/createStudygroup.css" rel="stylesheet" />
@@ -11,6 +11,7 @@
         <li><a class="active" href="main.html">MAIN</a></li>
         <li><a href="createStudygroup.html">CREATE STUDYGROUP</a></li>
         <li style="float:right" id="logout" type="button"><a>LOG OUT</a></li>
+        <li style="float:right"><a href="search.html">STUDYGROUPS</a>
     </ul>
 
     <div class="modal-content">
@@ -73,8 +74,32 @@
         <p></p>
     </div>
 
+    <div id="myModal" class="modal">
+        <div class="modal_content">
+          <span class="close">&times;</span>
+          <div id="info">
+
+            <h3>SEARCH FOR STUDYGROUPS</h3>
+
+            <label for="search">SEARCH KEYWORDS</label> <br>
+            <input type="text" id="search" name="search"><br>
+
+            <label for="ongoing">ONGOING</label> <br>
+            <input type="text" id="ongoing" name="ongoing" placeholder="true or false"><br>
+
+            <label for="sortBy">SORTBY</label> <br>
+            <input type="text" id="sortBy" name="sortBy" placeholder="asc or dsc"><br> <br>
+          
+            <button type="button" class="search_btn" id="search_btn">SEARCH</button>
+            </div>
+        </div>
+      
+    </div>
+
     <script type="module" src="js/createStudygroup.js"></script>
     <script type="module" src="js/logout.js"></script>
+    <script type="module" src="js/search_modal.js"></script>
+
 </body>
 
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <link rel="stylesheet" href="css/search.css">
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="main.html">MAIN</a></li>
+        <li><a href="createStudygroup.html">CREATE STUDYGROUP</a></li>
+        <li style="float:right" id="logout" type="button"><a>LOG OUT</a></li>
+        <li style="float:right"><a href="#"><i class="fa fa-fw fa-search" type="button" id="open_search"></i>SEARCH STUDYGROUPS</a></li>
+        
+    </ul>
+
+    <h2 id="sg">Looks like you are not part of a studygroup yet. Try seaching for studygroups!</h2>
+
+    <div id="myModal" class="modal">
+        <div class="modal_content">
+            <span class="close">&times;</span>
+            <div id="info">
+
+                <h3>SEARCH FOR STUDYGROUPS</h3>
+
+                <label for="search">SEARCH KEYWORDS</label> <br>
+                <input type="text" id="search" name="search"><br>
+
+                <label for="ongoing">ONGOING</label> <br>
+                <input type="text" id="ongoing" name="ongoing" placeholder="true or false"><br>
+
+                <label for="sortBy">SORTBY</label> <br>
+                <input type="text" id="sortBy" name="sortBy" placeholder="asc or dsc"><br> <br>
+
+                <label for="skip">SKIP STUDYGROUPS</label> <br>
+                <input type="text" id="skip" name="skip" placeholder="enter a number"><br> <br>
+
+                <button type="button" class="search_btn" id="search_btn">SEARCH</button>
+            </div>
+            <p></p>
+        </div>
+
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/logout.js"></script>
+    <script type="module" src="js/search_studygroups.js"></script>
+    <script type="module" src="js/search_modal.js"></script>
+</body>
+
+</html>

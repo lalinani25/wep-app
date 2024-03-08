@@ -1,12 +1,15 @@
+/*body*/
 body {
     background-color: #bfb1ce;
 }
 
+/*Image*/
 img {
     margin-left: 30%;
     margin-top: 5%;
 }
 
+/*Navigation Bar*/
 ul {
     list-style-type: none;
     margin: 0;
@@ -37,5 +40,80 @@ li a:hover:not(.active) {
 }
 
 .active {
+    background-color: #1c122b;
+}
+
+/*Search For Studygroup Content*/
+#info{
+    border-radius: 5px;
+    background-color: #7b6691;
+    padding: 20px;
+    text-align: center;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/*Search for Studygroup modal*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal_content {
+    background-color: #1c122b;
+    margin: 4% auto;
+    /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /*Search button*/
+  button[id='search_btn'] {
+    width: 100%;
+    background-color: #1c122bdc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[id='search_btn']:hover {
     background-color: #1c122b;
 }
