@@ -120,7 +120,6 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
                     console.log(url)
                    let name = document.querySelector('#name0').innerHTML;
                    let is_public = document.querySelector('#is_public0').innerHTML;
-                   let  console.log(is_public)
                    let  max_participants = document.querySelector('#max_participants0 ').innerHTML;
                    let  start_date = document.querySelector('#start_date0').innerHTML;
                    let  end_date = document.querySelector('#end_date0').innerHTML;
