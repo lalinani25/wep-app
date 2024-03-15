@@ -115,7 +115,7 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
                     let id = my_array._id
                     console.log(id)
                        
-                     url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/${my_array[0]._id}`
+                     url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/65d8b646ad05c8f742d4ff0e`
                     
                     console.log(url)
                    let name = document.querySelector('#name0').innerHTML;
@@ -257,6 +257,7 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
                     
                 })
             
+                
         }
         else {
             h1.innerHTML = "Something went wrong."
