@@ -111,43 +111,26 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
 
                     console.table(my_array)
                     let meeting = [{}];
-                    let name = document.querySelector('#name0').textContent;
-                    let is_public = document.querySelector('#is_public0').textContent;
-                    let max_participants = document.querySelector('#max_participants0 ').textContent;
-                    let start_date = document.querySelector('#start_date0').textContent;
-                    let end_date = document.querySelector('#end_date0').textContent;
-                    let description = document.querySelector('#description0').textContent;
-                    let school = document.querySelector('#school0').textContent;
-                    let course_number = document.querySelector('#course_number0').textContent;
-                    let day = document.querySelector('#day0').textContent;
-                    let time = document.querySelector('#time0').textContent;
-                    let location = document.querySelector('#location0').textContent;
-                    
+
                     let id = my_array._id
                     console.log(id)
-                   
-                 
-                     meeting.push({ day, time, location });
-                   
-                    meeting.splice(0, 1)
-                
-                    
-                        url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/${my_array[0]._id}`
+                       
+                     url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/${my_array[0]._id}`
                     
                     console.log(url)
-                    name = document.querySelector('#name0').innerHTML;
-                    is_public = document.querySelector('#is_public0').innerHTML;
-                    console.log(is_public)
-                    max_participants = document.querySelector('#max_participants0 ').innerHTML;
-                    start_date = document.querySelector('#start_date0').innerHTML;
-                    end_date = document.querySelector('#end_date0').innerHTML;
-                    description = document.querySelector('#description0').innerHTML;
-                    school = document.querySelector('#school0').innerHTML;
-                    course_number = document.querySelector('#course_number0').innerHTML;
-                    day = document.querySelector('#day0').innerHTML;
-                    time = document.querySelector('#time0').innerHTML;
-                    location = document.querySelector('#location0').innerHTML;
-                    meeting.push({ day, time, location });
+                   let name = document.querySelector('#name0').innerHTML;
+                   let is_public = document.querySelector('#is_public0').innerHTML;
+                   let  console.log(is_public)
+                   let  max_participants = document.querySelector('#max_participants0 ').innerHTML;
+                   let  start_date = document.querySelector('#start_date0').innerHTML;
+                   let  end_date = document.querySelector('#end_date0').innerHTML;
+                   let  description = document.querySelector('#description0').innerHTML;
+                   let  school = document.querySelector('#school0').innerHTML;
+                   let  course_number = document.querySelector('#course_number0').innerHTML;
+                   let  day = document.querySelector('#day0').innerHTML;
+                  let  time = document.querySelector('#time0').innerHTML;
+                  let  location = document.querySelector('#location0').innerHTML;
+                  meeting.push({ day, time, location });
                    
                     meeting.splice(0, 1)
                 
