@@ -134,3 +134,168 @@ h2{
     color: #1c122b;
     margin-top: 50px;
 }
+
+
+#studygroup_modal{
+    display: inline-block;
+    background-color:#7b6691;
+    border: #1c122b;
+    border-style:double;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: #1c122b;
+    padding: 10px;
+    margin: 40px;
+    text-align: center;
+    width: 40%;
+    white-space: nowrap;
+}
+
+#meeting_times{
+    border: #1c122b;
+    border-style:double;
+    border-radius: 10px;
+}
+
+#name0::before{
+     content: "STUDYGROUP NAME: ";    
+}
+
+#is_public0::before{
+    content: "PUBLIC: ";    
+}
+
+#max_participants0::before{
+    content: "PARTICIPANTS: 0/";    
+}
+
+#start_date0::before{
+    content: "START DATE: ";    
+}
+
+#end_date0::before{
+    content: "END DATE: ";    
+}
+
+#school0::before{
+    content: "SCHOOL: ";    
+}
+
+#description0::before{
+    content: "DESCRIPTION: ";    
+}
+
+#course_number0::before{
+    content: "COURSE NUMBER: ";    
+}
+
+#day0::before{
+    display: inline-block;
+    content: "DAY: ";    
+}
+
+#time0::before{
+    display: inline-block;
+    content: "TIME: ";    
+}
+
+#location0::before{
+    display: inline-block;
+    content: "LOCATION: ";    
+}
+
+
+#name1::before{
+    content: "STUDYGROUP NAME: ";    
+}
+
+#is_public1::before{
+   content: "PUBLIC: ";    
+}
+
+#max_participants1::before{
+   content: "PARTICIPANTS: 0/";    
+}
+
+#start_date1::before{
+   content: "START DATE: ";    
+}
+
+#end_date1::before{
+   content: "END DATE: ";    
+}
+
+#school1::before{
+   content: "SCHOOL: ";    
+}
+
+#description1::before{
+   content: "DESCRIPTION: ";    
+}
+
+#course_number1::before{
+   content: "COURSE NUMBER: ";    
+}
+
+#day1::before{
+   display: inline-block;
+   content: "DAY: ";    
+}
+
+#time1::before{
+   display: inline-block;
+   content: "TIME: ";    
+}
+
+#location1::before{
+   display: inline-block;
+   content: "LOCATION: ";    
+}
+
+button[id='editBtn0'] {
+    width: 100%;
+    background-color: #1c122bdc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[id='editBtn0']:hover {
+    background-color: #1c122b;
+}
+
+button[id='editBtn1'] {
+    width: 100%;
+    background-color: #1c122bdc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[id='editBtn1']:hover {
+    background-color: #1c122b;
+}
+
+
+button[id='my_studygroups'] {
+    width: 30%;
+    background-color: #1c122bdc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    margin-left: 435px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+button[id='my_studygroups']:hover {
+    background-color: #1c122b;
+}
