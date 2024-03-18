@@ -106,7 +106,6 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
             }
 
                
-            
                 document.querySelector("#editBtn0").addEventListener('click', async function (event) {
 
                     console.table(my_array)
@@ -176,7 +175,7 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
                         mssg.style.color = 'red';
                     }
                 
-                    
+                
                     
                 })
                
@@ -256,18 +255,7 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
                     
                     
                 })
-            
                 
-        }
-        else {
-            h1.innerHTML = "Something went wrong."
-            p.innerHTML = "Please try again!"
-
-            console.log("Error ")
-        }
-    
-    }
-
     document.querySelector("#editBtn2").addEventListener('click', async function (event) {
 
         console.table(my_array)
@@ -341,6 +329,18 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
         
     })
     
+            
+                
+        }
+        else {
+            h1.innerHTML = "Something went wrong."
+            p.innerHTML = "Please try again!"
+
+            console.log("Error ")
+        }
+    
+    }
+
 
     searchStudygroups()
    
