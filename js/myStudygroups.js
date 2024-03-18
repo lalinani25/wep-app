@@ -268,6 +268,78 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
     
     }
 
+    document.querySelector("#editBtn2").addEventListener('click', async function (event) {
+
+        console.table(my_array)
+        let meeting = [{}];
+
+        let id = my_array._id
+        console.log(id)
+           
+         url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/${my_array[2]._id}`
+        
+        console.log(url)
+       let name = document.querySelector('#name2').innerHTML;
+       let is_public = document.querySelector('#is_public2').innerHTML;
+       let  max_participants = document.querySelector('#max_participants2 ').innerHTML;
+       let  start_date = document.querySelector('#start_date2').innerHTML;
+       let  end_date = document.querySelector('#end_date2').innerHTML;
+       let  description = document.querySelector('#description2').innerHTML;
+       let  school = document.querySelector('#school2').innerHTML;
+       let  course_number = document.querySelector('#course_number2').innerHTML;
+       let  day = document.querySelector('#day2').innerHTML;
+      let  time = document.querySelector('#time2').innerHTML;
+      let  location = document.querySelector('#location2').innerHTML;
+      meeting.push({ day, time, location });
+       
+        meeting.splice(0, 1)
+    
+    
+        let studygroupData = {
+            name: name,
+            is_public: is_public,
+            max_participants: max_participants,
+            start_date: start_date,
+            end_date: end_date,
+            meeting_times: meeting,
+            description: description,
+            school: school,
+            course_number: course_number,
+        };
+    
+        console.log(studygroupData)
+    
+        console.log(studygroupData)
+        console.log("test")
+        try {
+            let response = await fetch(url, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Authorization": `Bearer ${token}`
+                },
+                body: JSON.stringify(studygroupData),
+            })
+
+            if (response.ok) {
+                mssg.innerHTML = 'Studygroup editted!';
+                mssg.style.color = 'white'
+                console.log(studygroupData)
+
+
+            } else {
+                const errorData = await response.json();
+                mssg.innerHTML = "Error: " + errorData.message;
+                mssg.style.color = 'red';
+            }
+        } catch (error) {
+            mssg.innerHTML = "Error: An error occurred";
+            mssg.style.color = 'red';
+        }
+    
+        
+        
+    })
     
 
     searchStudygroups()
