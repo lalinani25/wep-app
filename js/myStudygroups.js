@@ -95,7 +95,7 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
                         meeting_times+= '</div>'
                         studygroup_modal += meeting_times
 
-                        studygroup_modal += "<button id = 'editBtn" + j+"'>" + "Edit" + "</button>"
+                        studygroup_modal += "<button id = 'editBtn" + j+"'>" + "Save" + "</button>"
                         studygroup_modal += '</div>'
         
                     }
@@ -163,7 +163,7 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
                             mssg.innerHTML = 'Studygroup editted!';
                             mssg.style.color = 'white'
                             console.log(studygroupData)
-            
+                            location.reload()
             
                         } else {
                             const errorData = await response.json();
@@ -240,7 +240,7 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
                             mssg.innerHTML = 'Studygroup editted!';
                             mssg.style.color = 'white'
                             console.log(studygroupData)
-            
+                            location.reload()
             
                         } else {
                             const errorData = await response.json();
@@ -313,7 +313,7 @@ document.querySelector("#my_studygroups").addEventListener('click', async functi
                 mssg.innerHTML = 'Studygroup editted!';
                 mssg.style.color = 'white'
                 console.log(studygroupData)
-
+                location.reload()
 
             } else {
                 const errorData = await response.json();

@@ -360,3 +360,189 @@ button[id='my_studygroups'] {
 button[id='my_studygroups']:hover {
     background-color: #1c122b;
 }
+
+#name::before{
+    content: "STUDYGROUP NAME: ";    
+}
+#is_public::before{
+    content: "PUBLIC: ";    
+ }
+ 
+ #max_participants::before{
+    content: "PARTICIPANTS: 0/";    
+ }
+ 
+ #start_date::before{
+    content: "START DATE: ";    
+ }
+ 
+ #end_date::before{
+    content: "END DATE: ";    
+ }
+ 
+ #school::before{
+    content: "SCHOOL: ";    
+ }
+ 
+ #description::before{
+    content: "DESCRIPTION: ";    
+ }
+ 
+ #course_number::before{
+    content: "COURSE NUMBER: ";    
+ }
+ 
+ #day::before{
+    display: inline-block;
+    content: "DAY: ";    
+ }
+ 
+ #time::before{
+    display: inline-block;
+    content: "TIME: ";    
+ }
+ 
+ #location::before{
+    display: inline-block;
+    content: "LOCATION: ";    
+ }
+ 
+ button[id='editBtn'] {
+     width: 100%;
+     background-color: #1c122bdc;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ 
+ button[id='editBtn']:hover {
+     background-color: #1c122b;
+ }
+ 
+ #name3::before{
+    content: "STUDYGROUP NAME: ";    
+}
+#is_public3::before{
+    content: "PUBLIC: ";    
+ }
+ 
+ #max_participants3::before{
+    content: "PARTICIPANTS: 0/";    
+ }
+ 
+ #start_date3::before{
+    content: "START DATE: ";    
+ }
+ 
+ #end_date3::before{
+    content: "END DATE: ";    
+ }
+ 
+ #school3::before{
+    content: "SCHOOL: ";    
+ }
+ 
+ #description3::before{
+    content: "DESCRIPTION: ";    
+ }
+ 
+ #course_number3::before{
+    content: "COURSE NUMBER: ";    
+ }
+ 
+ #day3::before{
+    display: inline-block;
+    content: "DAY: ";    
+ }
+ 
+ #time3::before{
+    display: inline-block;
+    content: "TIME: ";    
+ }
+ 
+ #location3::before{
+    display: inline-block;
+    content: "LOCATION: ";    
+ }
+ 
+ button[id='editBtn3'] {
+     width: 100%;
+     background-color: #1c122bdc;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ 
+ button[id='editBtn3']:hover {
+     background-color: #1c122b;
+ }
+ 
+ 
+ #name4::before{
+    content: "STUDYGROUP NAME: ";    
+}
+#is_public4::before{
+    content: "PUBLIC: ";    
+ }
+ 
+ #max_participants4::before{
+    content: "PARTICIPANTS: 0/";    
+ }
+ 
+ #start_date4::before{
+    content: "START DATE: ";    
+ }
+ 
+ #end_date4::before{
+    content: "END DATE: ";    
+ }
+ 
+ #school4::before{
+    content: "SCHOOL: ";    
+ }
+ 
+ #description4::before{
+    content: "DESCRIPTION: ";    
+ }
+ 
+ #course_number4::before{
+    content: "COURSE NUMBER: ";    
+ }
+ 
+ #day4::before{
+    display: inline-block;
+    content: "DAY: ";    
+ }
+ 
+ #time4::before{
+    display: inline-block;
+    content: "TIME: ";    
+ }
+ 
+ #location4::before{
+    display: inline-block;
+    content: "LOCATION: ";    
+ }
+ 
+ button[id='editBtn4'] {
+     width: 100%;
+     background-color: #1c122bdc;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+ }
+ 
+ button[id='editBtn4']:hover {
+     background-color: #1c122b;
+ }
+ 
+ 

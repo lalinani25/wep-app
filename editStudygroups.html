@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <link rel="stylesheet" href="css/search.css">
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="main.html">MAIN</a></li>
+        <li><a href="createStudygroup.html">CREATE STUDYGROUP</a></li>
+        <li style="float:right" id="logout" type="button"><a>LOG OUT</a></li>
+        <li style="float:right"><a href="#"><i class="fa fa-fw fa-search" type="button" id="open_search"></i>SEARCH STUDYGROUPS</a></li>
+     
+    </ul>
+
+
+    <div id="my_Modal" class="modal">
+        <div class="edit_studygroups">
+            <span class="close">&times;</span>
+            <div id="info">
+
+                <h3>EDIT STUDYGROUP</h3>
+
+                <label for="name">NAME</label> <br>
+                <input type="text" id="name" name="name"><br>
+
+                <label for="is_public">PUBLIC</label> <br>
+                <input type="text" id="is_public" name="is_public" placeholder="true or false"><br>
+
+                <label for="max_participants">MAXIMUM NUMBER OF PARTICIPANTS</label> <br>
+                <input type="text" id="max_participants" name="max_participants"><br>
+
+                <label for="date">START DATE</label> <br>
+                <input type="text" id="start_date" name="start_date" placeholder="Ex: 2024-02-22"><br>
+
+                <label for="date">END DATE</label> <br>
+                <input type="text" id="end_date" name="end_date" placeholder="Ex: 2024-02-22"><br>
+
+                <br>
+                <div id="meeting_time">
+                    <label for="day">MEETING DAY</label> <br>
+                    <select id="day" name="day">
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                        <option value="Sunday">Sunday</option>
+                    </select>
+
+                    <label for="meeting_time">MEETING TIME</label> <br>
+                    <input type="text" id="time" name="time" placeholder="Ex: 10:00">
+
+                    <label for="location">MEETING LOCATION</label> <br>
+                    <input type="text" id="location" name="location">
+
+                    <button type="button" class="addMeetingInfo" id="addMeetingInfo">+
+                    </button> <br>
+                </div>
+                <br>
+                <label for="description">STUDYGROUP DESCRIPTION</label> <br>
+                <input type="text" id="description" name="description"><br>
+                <br>
+
+                <label for="school">SCHOOL</label> <br>
+                <input type="text" id="school" name="school"><br>
+
+                <label for="course_number">COURSE NUMBER</label> <br>
+                <input type="text" id="course_number" name="course_number"><br>
+                <br>
+                <button type="button" class="save" id="save">SAVE
+                </button>
+            </div>
+            <p></p>
+        </div>
+
+        <p></p>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/logout.js"></script>
+    <script type="module" src="js/myStudygroups.js"></script>
+    <script type="module" src="js/editStudygroupsModal.js"></script>
+    
+</body>
+
+</html>
