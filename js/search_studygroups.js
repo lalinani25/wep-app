@@ -165,7 +165,7 @@ search_btn.addEventListener('click', async function (event) {
 
                     if (JSON.stringify(array[i].owner) === realUserId) {
 
-                        array[i].editBtn = "<button id = 'editBtn" + i + "'>" + "Edit" + "</button>"
+                        array[i].editBtn = "<button id = 'editBtn" + i + "'>" + "SAVE" + "</button>"
 
                     }
 
