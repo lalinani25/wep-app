@@ -4,6 +4,8 @@ const message = document.querySelector("p");
 const token = localStorage.getItem("token");
 const mssg = document.querySelector("p");
 let studygroup_modal;
+let add;
+let remove;
 
 let array = []
 let my_array = []
@@ -28,6 +30,9 @@ search_btn.addEventListener('click', async function (event) {
         console.log(skip.value)
 
         const owner = document.querySelector("#owner")
+        console.log(owner.value)
+
+        const member = document.querySelector("#member")
         console.log(owner.value)
 
         const studyGroupSearchData = {
@@ -144,6 +149,7 @@ search_btn.addEventListener('click', async function (event) {
 
 
             if (response.status == 200) {
+                
 
                 let data = []
                 data = await response.json()
@@ -166,6 +172,7 @@ search_btn.addEventListener('click', async function (event) {
                     if (JSON.stringify(array[i].owner) === realUserId) {
 
                         array[i].editBtn = "<button id = 'editBtn" + i + "'>" + "SAVE" + "</button>"
+                        array[i].deleteBtn = "<button id = 'deleteBtn" + i + "'>" + "DELETE" + "</button>"
 
                     }
 
@@ -185,7 +192,7 @@ search_btn.addEventListener('click', async function (event) {
                     console.log("user_id: " + user_id)
                     let realUserId = JSON.stringify(user_id._id);
                     console.log("realUserId: " + realUserId)
-                    if (JSON.stringify(array[j].owner) === realUserId && (owner.value == "" || owner.value == "true")) {
+                    if (JSON.stringify(array[j].owner) === realUserId && (owner.value == "" || owner.value == "true") && (member.value == "" || member.value != "true")) {
 
                         studygroup_modal = '<div id="studygroup_modal">'
 
@@ -228,8 +235,8 @@ search_btn.addEventListener('click', async function (event) {
                                 '<p id = "location' + j + '" contentEditable="true"> ' + arr[k].location + '</p>'
 
                         }
-                        
-                        meeting_times +=  '<button type="button" class="addMeetingInfo' + j + '" id="addMeetingInfo'+ j + '"> + </button>'
+
+                        meeting_times += '<button type="button" class="addMeetingInfo' + j + '" id="addMeetingInfo' + j + '"> + </button>'
 
                         meeting_times += '</div>'
                         studygroup_modal += meeting_times
@@ -237,6 +244,9 @@ search_btn.addEventListener('click', async function (event) {
 
                         let editBtn = array[j].editBtn
                         studygroup_modal += editBtn
+
+                        let deleteBtn = array[j].deleteBtn
+                        studygroup_modal += deleteBtn
 
                         studygroup_modal += '</div>'
                         console.log(studygroup_modal)
@@ -289,13 +299,271 @@ search_btn.addEventListener('click', async function (event) {
                         meeting_times += '</div>'
                         studygroup_modal += meeting_times
 
-                        studygroup_modal += '</div>'
-                        console.log(studygroup_modal)
-                        document.body.innerHTML += studygroup_modal;
+                        let addBtn = []
+                        console.log(JSON.stringify(array[j].participants))
+
+                            if (((array[j].participants == undefined) || (realUserId != JSON.stringify(array[j].participants[0]))) || member.value=="false") {
+                                array[j].addBtn = '<button type="button" class="add' + j + '" id="add' + j + '"> JOIN </button>'
+                                let addBtn = array[j].addBtn
+                                studygroup_modal +=addBtn
+                                studygroup_modal += '</div>'
+                                console.log(studygroup_modal)
+                                if(member.value != "true"){
+                                document.body.innerHTML += studygroup_modal;
+                                }
+                            }
+                            else if(((array[j].participants != undefined) || (JSON.stringify(array[j].participants[0] == realUserId))) && (member.value == "true" || member.value =="")){
+                                array[j].removeBtn = '<button type="button" class="remove' + j + '" id="remove' + j + '"> LEAVE </button>'
+                                let removeBtn = array[j].removeBtn
+                                studygroup_modal += removeBtn
+                                studygroup_modal += '</div>'
+                                console.log(studygroup_modal)
+                                
+                                document.body.innerHTML += studygroup_modal;
+                                
+                            }
+
 
                     }
+
+
+                
                 }
 
+                //Join
+
+            if(array[1].hasOwnProperty('addBtn')){ 
+                document.querySelector("#add1").addEventListener('click', async function (event) {
+       
+                           add = "add";
+                           url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/65e873538f2fac562a2fe82a/participants?add=${add}`
+       
+                           console.log("add")
+                           try {
+                               let response = await fetch(url, {
+                                   method: 'PATCH',
+                                   headers: {
+                                       'Content-Type': 'application/json',
+                                       "Authorization": `Bearer ${token}`
+                                   },
+                                   body: JSON.stringify(user._id),
+                               })
+       
+                               if (response.status === 200) {
+                                   location.reload()
+                               } else {
+                                   const errorData = await response.json();
+                                   mssg.innerHTML = "Error: " + errorData.message;
+                                   mssg.style.color = 'red';
+                               }
+                           } catch (error) {
+                               mssg.innerHTML = "Error: An error occurred";
+                               mssg.style.color = 'red';
+                           }
+                       })
+                  
+           
+                    }
+
+                    if(array[2].hasOwnProperty('addBtn')){ 
+                       document.querySelector("#add2").addEventListener('click', async function (event) {
+       
+                           add = "add";
+                           url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/65eaa08a8f2fac562a2fefc9/participants?add=${add}`
+       
+                           console.log("add")
+                           try {
+                               let response = await fetch(url, {
+                                   method: 'PATCH',
+                                   headers: {
+                                       'Content-Type': 'application/json',
+                                       "Authorization": `Bearer ${token}`
+                                   },
+                                   body: JSON.stringify(user._id),
+                               })
+       
+                               if (response.status === 200) {
+                                   location.reload()
+                               } else {
+                                   const errorData = await response.json();
+                                   mssg.innerHTML = "Error: " + errorData.message;
+                                   mssg.style.color = 'red';
+                               }
+                           } catch (error) {
+                               mssg.innerHTML = "Error: An error occurred";
+                               mssg.style.color = 'red';
+                           }
+       
+                    
+       
+                       })
+                }
+
+                //Leave
+                if(array[1].hasOwnProperty('removeBtn')){ 
+                document.querySelector("#remove1").addEventListener('click', async function (event) {
+
+                    remove = "remove";
+                    url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/65e873538f2fac562a2fe82a/participants?remove=${remove}`
+                
+                    console.log("remove")
+                    try {
+                        let response = await fetch(url, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                "Authorization": `Bearer ${token}`
+                            },
+                            body: JSON.stringify(user._id),
+                        })
+                
+                        if (response.status === 200) {
+                            location.reload()
+                        } else {
+                            const errorData = await response.json();
+                            mssg.innerHTML = "Error: " + errorData.message;
+                            mssg.style.color = 'red';
+                        }
+                    } catch (error) {
+                        mssg.innerHTML = "Error: An error occurred";
+                        mssg.style.color = 'red';
+                    }
+                
+                })
+                
+            }
+            if(array[2].hasOwnProperty('removeBtn')){ 
+                document.querySelector("#remove2").addEventListener('click', async function (event) {
+                
+                    remove = "remove";
+                    url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/65eaa08a8f2fac562a2fefc9/participants?remove=${remove}`
+                
+                    console.log("remove")
+                    try {
+                        let response = await fetch(url, {
+                            method: 'PATCH',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                "Authorization": `Bearer ${token}`
+                            },
+                            body: JSON.stringify(user._id),
+                        })
+                
+                        if (response.status === 200) {
+                            location.reload()
+                        } else {
+                            const errorData = await response.json();
+                            mssg.innerHTML = "Error: " + errorData.message;
+                            mssg.style.color = 'red';
+                        }
+                    } catch (error) {
+                        mssg.innerHTML = "Error: An error occurred";
+                        mssg.style.color = 'red';
+                    }
+                
+                })
+                
+            }
+                
+                
+                
+                //Delete Studygroups
+                document.querySelector("#deleteBtn4").addEventListener('click', async function (event) {
+
+
+                    url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/660d2b195602b603a70dd05e`
+
+                    console.log("test")
+                    try {
+                        let response = await fetch(url, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                "Authorization": `Bearer ${token}`
+                            }
+                        })
+
+                        if (response.status === 200) {
+                            location.reload()
+                        } else {
+                            const errorData = await response.json();
+                            mssg.innerHTML = "Error: " + errorData.message;
+                            mssg.style.color = 'red';
+                        }
+                    } catch (error) {
+                        mssg.innerHTML = "Error: An error occurred";
+                        mssg.style.color = 'red';
+                    }
+
+
+
+                })
+
+                document.querySelector("#deleteBtn0").addEventListener('click', async function (event) {
+
+
+                    url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/66042f92292f0f0b738d603a`
+
+                    console.log("test")
+                    try {
+                        let response = await fetch(url, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                "Authorization": `Bearer ${token}`
+                            }
+                        })
+
+                        if (response.status === 200) {
+                            location.reload()
+                        }else {
+                            const errorData = await response.json();
+                            mssg.innerHTML = "Error: " + errorData.message;
+                            mssg.style.color = 'red';
+                        }
+                    } catch (error) {
+                        mssg.innerHTML = "Error: An error occurred";
+                        mssg.style.color = 'red';
+                    }
+
+
+
+                })
+
+
+                document.querySelector("#deleteBtn3").addEventListener('click', async function (event) {
+
+
+                    url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/66042f92292f0f0b738d603a`
+
+                    console.log("test")
+                    try {
+                        let response = await fetch(url, {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                "Authorization": `Bearer ${token}`
+                            }
+                        })
+
+                        if (response.status === 200) {
+                            location.reload()
+                        } else {
+                            const errorData = await response.json();
+                            mssg.innerHTML = "Error: " + errorData.message;
+                            mssg.style.color = 'red';
+                        }
+                    } catch (error) {
+                        mssg.innerHTML = "Error: An error occurred";
+                        mssg.style.color = 'red';
+                    }
+
+
+
+                })
+
+
+                // Edit Studygroups
                 console.log("hello")
                 let meeting0 = [{}];
 
@@ -306,11 +574,11 @@ search_btn.addEventListener('click', async function (event) {
                     let location = document.querySelector('#location0').innerHTML;
                     meeting0.push({ day, time, location });
                     console.log(meeting0)
-                    document.querySelector('#day0').innerHTML= "";
+                    document.querySelector('#day0').innerHTML = "";
                     document.querySelector('#time0').innerHTML = "";
-                    document.querySelector('#location0').innerHTML= "";
+                    document.querySelector('#location0').innerHTML = "";
                     console.log(meeting0)
-                
+
                 });
                 //removing the empty object from the first index in meeting[]
                 meeting0.splice(0, 1)
@@ -335,7 +603,7 @@ search_btn.addEventListener('click', async function (event) {
                     let description = document.querySelector('#description0').innerHTML;
                     let school = document.querySelector('#school0').innerHTML;
                     let course_number = document.querySelector('#course_number0').innerHTML;
-                  
+
                     let studygroupData = {
                         name: name,
                         is_public: is_public,
@@ -392,15 +660,15 @@ search_btn.addEventListener('click', async function (event) {
                     let location = document.querySelector('#location3').innerHTML;
                     meeting3.push({ day, time, location });
                     console.log(meeting3)
-                    document.querySelector('#day3').innerHTML= "";
+                    document.querySelector('#day3').innerHTML = "";
                     document.querySelector('#time3').innerHTML = "";
-                    document.querySelector('#location3').innerHTML= "";
+                    document.querySelector('#location3').innerHTML = "";
                     console.log(meeting3)
-                
+
                 });
                 //removing the empty object from the first index in meeting[]
                 meeting3.splice(0, 1)
-                
+
                 document.querySelector("#editBtn3").addEventListener('click', async function (event) {
 
                     console.table(my_array)
@@ -467,7 +735,7 @@ search_btn.addEventListener('click', async function (event) {
 
                 })
 
-                
+
                 console.log("hello")
                 let meeting4 = [{}];
 
@@ -478,11 +746,11 @@ search_btn.addEventListener('click', async function (event) {
                     let location = document.querySelector('#location4').innerHTML;
                     meeting4.push({ day, time, location });
                     console.log(meeting4)
-                    document.querySelector('#day4').innerHTML= "";
+                    document.querySelector('#day4').innerHTML = "";
                     document.querySelector('#time4').innerHTML = "";
-                    document.querySelector('#location4').innerHTML= "";
+                    document.querySelector('#location4').innerHTML = "";
                     console.log(meeting4)
-                
+
                 });
                 //removing the empty object from the first index in meeting[]
                 meeting4.splice(0, 1)
@@ -495,7 +763,7 @@ search_btn.addEventListener('click', async function (event) {
                     let id = my_array._id
                     console.log(id)
 
-                    url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/65f7bace21a388de3feccc11`
+                    url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/66042dac292f0f0b738d5fed`
 
                     console.log(url)
                     let name = document.querySelector('#name4').innerHTML;
@@ -506,7 +774,7 @@ search_btn.addEventListener('click', async function (event) {
                     let description = document.querySelector('#description4').innerHTML;
                     let school = document.querySelector('#school4').innerHTML;
                     let course_number = document.querySelector('#course_number4').innerHTML;
-                  
+
                     let studygroupData = {
                         name: name,
                         is_public: is_public,
@@ -567,3 +835,4 @@ search_btn.addEventListener('click', async function (event) {
 
     searchStudygroups()
 });
+

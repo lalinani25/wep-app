@@ -166,7 +166,7 @@ h2{
 }
 
 #max_participants0::before{
-    content: "PARTICIPANTS: 0/";    
+    content: "MAX-PARTICIPANTS: ";    
 }
 
 #start_date0::before{
@@ -214,7 +214,7 @@ h2{
 }
 
 #max_participants1::before{
-   content: "PARTICIPANTS: 0/";    
+   content: "MAX-PARTICIPANTS: ";    
 }
 
 #start_date1::before{
@@ -253,11 +253,11 @@ h2{
 }
 
 button[id='editBtn0'] {
-    width: 100%;
+    width: 40%;
     background-color: #1c122bdc;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 14px 40px;
+    margin: 8px 3px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -267,19 +267,49 @@ button[id='editBtn0']:hover {
     background-color: #1c122b;
 }
 
+button[id='deleteBtn0'] {
+   width: 40%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button[id='deleteBtn0']:hover {
+   background-color: #1c122b;
+}
+
 button[id='editBtn1'] {
-    width: 100%;
-    background-color: #1c122bdc;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+   width: 40%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
 }
 
 button[id='editBtn1']:hover {
     background-color: #1c122b;
+}
+
+button[id='deleteBtn1'] {
+   width: 40%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button[id='deleteBtn1']:hover {
+   background-color: #1c122b;
 }
 
 #name2::before{
@@ -291,7 +321,7 @@ button[id='editBtn1']:hover {
 }
 
 #max_participants2::before{
-   content: "PARTICIPANTS: 0/";    
+   content: "MAX-PARTICIPANTS: ";    
 }
 
 #start_date2::before{
@@ -330,18 +360,32 @@ button[id='editBtn1']:hover {
 }
 
 button[id='editBtn2'] {
-    width: 100%;
-    background-color: #1c122bdc;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+   width: 40%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
 }
 
 button[id='editBtn2']:hover {
     background-color: #1c122b;
+}
+button[id='deleteBtn2'] {
+   width: 40%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button[id='deleteBtn2']:hover {
+   background-color: #1c122b;
 }
 
 button[id='my_studygroups'] {
@@ -369,7 +413,7 @@ button[id='my_studygroups']:hover {
  }
  
  #max_participants::before{
-    content: "PARTICIPANTS: 0/";    
+    content: "MAX-PARTICIPANTS: ";    
  }
  
  #start_date::before{
@@ -430,7 +474,7 @@ button[id='my_studygroups']:hover {
  }
  
  #max_participants3::before{
-    content: "PARTICIPANTS: 0/";    
+    content: "MAX-PARTICIPANTS: ";    
  }
  
  #start_date3::before{
@@ -469,20 +513,34 @@ button[id='my_studygroups']:hover {
  }
  
  button[id='editBtn3'] {
-     width: 100%;
-     background-color: #1c122bdc;
-     color: white;
-     padding: 14px 20px;
-     margin: 8px 0;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
+   width: 40%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
  }
  
  button[id='editBtn3']:hover {
      background-color: #1c122b;
  }
  
+ button[id='deleteBtn3'] {
+   width: 40%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button[id='deleteBtn3']:hover {
+   background-color: #1c122b;
+}
  
  #name4::before{
     content: "STUDYGROUP NAME: ";    
@@ -492,7 +550,7 @@ button[id='my_studygroups']:hover {
  }
  
  #max_participants4::before{
-    content: "PARTICIPANTS: 0/";    
+    content: "MAX-PARTICIPANTS: ";    
  }
  
  #start_date4::before{
@@ -531,7 +589,7 @@ button[id='my_studygroups']:hover {
  }
  
  button[id='editBtn4'] {
-     width: 100%;
+     width: 40%;
      background-color: #1c122bdc;
      color: white;
      padding: 14px 20px;
@@ -544,5 +602,78 @@ button[id='my_studygroups']:hover {
  button[id='editBtn4']:hover {
      background-color: #1c122b;
  }
+
+ button[id='deleteBtn4'] {
+   width: 40%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button[id='deleteBtn4']:hover {
+   background-color: #1c122b;
+}
  
+button[id='add1'] {
+   width: 100%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button[id='add1']:hover {
+   background-color: #1c122b;
+}
  
+button[id='add2'] {
+   width: 100%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button[id='add2']:hover {
+   background-color: #1c122b;
+}
+
+button[id='remove1'] {
+   width: 100%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button[id='remove1']:hover {
+   background-color: #1c122b;
+}
+
+button[id='remove2'] {
+   width: 100%;
+   background-color: #1c122bdc;
+   color: white;
+   padding: 14px 40px;
+   margin: 8px 3px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button[id='remove2']:hover {
+   background-color: #1c122b;
+}
