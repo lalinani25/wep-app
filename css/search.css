@@ -157,6 +157,12 @@ h2{
     border-radius: 10px;
 }
 
+#participants{
+   border: #1c122b;
+    border-style:double;
+    border-radius: 10px;
+}
+
 #name0::before{
      content: "STUDYGROUP NAME: ";    
 }

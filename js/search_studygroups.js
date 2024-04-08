@@ -4,9 +4,10 @@ const message = document.querySelector("p");
 const token = localStorage.getItem("token");
 const mssg = document.querySelector("p");
 let studygroup_modal;
+let participants = [];
 let add;
 let remove;
-
+let data1 = []
 let array = []
 let my_array = []
 
@@ -175,6 +176,7 @@ search_btn.addEventListener('click', async function (event) {
                         array[i].deleteBtn = "<button id = 'deleteBtn" + i + "'>" + "DELETE" + "</button>"
 
                     }
+                    
 
                 }
 
@@ -183,6 +185,29 @@ search_btn.addEventListener('click', async function (event) {
 
 
                 for (let j = 0; j < array.length; j++) {
+                    
+                    let url1 =`https://studdy-buddy-api-server.azurewebsites.net/user/${array[j]._id}`
+                    console.log(url1)
+                    try {
+                        let response = await fetch( url1,{
+                            method: 'GET',
+                            headers: {
+                                "Authorization": `Bearer ${token}`
+                            },
+                    
+                        })
+                        if(response.ok){
+        
+                            data1 = await response.json()
+                            console.log(data1)
+                        }
+
+                    } catch (error) {
+                        mssg.innerHTML = "Error: An error occurred";
+                        mssg.style.color = 'red';
+                    }
+
+
 
                     console.log(array[j])
 
@@ -193,7 +218,7 @@ search_btn.addEventListener('click', async function (event) {
                     let realUserId = JSON.stringify(user_id._id);
                     console.log("realUserId: " + realUserId)
                     if (JSON.stringify(array[j].owner) === realUserId && (owner.value == "" || owner.value == "true") && (member.value == "" || member.value != "true")) {
-
+               
                         studygroup_modal = '<div id="studygroup_modal">'
 
                         let name = '<p display="inline-block" id = "name' + j + '" contentEditable="true">' + array[j].name + '</p>'
@@ -205,6 +230,23 @@ search_btn.addEventListener('click', async function (event) {
 
                         let max_participants = '<p  id = "max_participants' + j + '" contentEditable="true">' + array[j].max_participants + '</p>'
                         studygroup_modal += max_participants
+
+                        participants = array[j].participants
+                        let participant = '<div id="participants">PARTICIPANTS:'
+                        
+
+                        if(!(participants.length === 0)){
+                            for (let k = 0; k < participants.length; k++) {
+                                console.log(participants[k])
+                                participant += '<p id = "p_name' + j + '" >' + data1[k].username + '</p>' 
+    
+                            }
+                        }else{
+                            participant += '<p id = "p_name">No Participants</p>'
+                        }
+
+                        participant += '</div>'
+                        studygroup_modal += participant
 
                         let st_date = array[j].start_date
                         let final_date = st_date.split("T", 1)[0]
@@ -267,6 +309,27 @@ search_btn.addEventListener('click', async function (event) {
                         let max_participants = '<p  id = "max_participants">' + array[j].max_participants + '</p>'
                         studygroup_modal += max_participants
 
+                        participants = array[j].participants
+
+                        console.log(participants)
+                        let participant = '<div id="participants">PARTICIPANTS:'
+
+                        if(!(participants.length === 0)){
+                        
+                            for (let k = 0; k < participants.length; k++) {
+                            
+                                console.log(participants[k])
+                                participant += '<p id = "p_name' + j + '" >' + data1[k].username + '</p>' 
+                                
+                            }
+                        
+                        }
+                        else{
+                            participant += '<p id = "p_name">No Participants</p>'
+                        }
+                        participant += '</div>'
+                        studygroup_modal += participant
+
                         let st_date = array[j].start_date
                         let final_date = st_date.split("T", 1)[0]
                         console.log(final_date)
@@ -313,6 +376,7 @@ search_btn.addEventListener('click', async function (event) {
                                 }
                             }
                             else if(((array[j].participants != undefined) || (JSON.stringify(array[j].participants[0] == realUserId))) && (member.value == "true" || member.value =="")){
+                              
                                 array[j].removeBtn = '<button type="button" class="remove' + j + '" id="remove' + j + '"> LEAVE </button>'
                                 let removeBtn = array[j].removeBtn
                                 studygroup_modal += removeBtn
