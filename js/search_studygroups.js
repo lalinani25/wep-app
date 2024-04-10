@@ -175,8 +175,8 @@ search_btn.addEventListener('click', async function (event) {
 
                     if (JSON.stringify(array[i].owner) === realUserId) {
 
-                        array[i].editBtn = "<button id = 'editBtn" + i + "'>" + "SAVE" + "</button>"
-                        array[i].deleteBtn = "<button id = 'deleteBtn" + i + "'>" + "DELETE" + "</button>"
+                        array[i].editBtn = "<button class = 'editBtn' id = 'editBtn" + i + "'>" + "SAVE" + "</button>"
+                        array[i].deleteBtn = "<button class = 'deleteBtn' id = 'deleteBtn" + i + "'>" + "DELETE" + "</button>"
 
                     }
 
@@ -223,14 +223,14 @@ search_btn.addEventListener('click', async function (event) {
 
                         studygroup_modal = '<div id="studygroup_modal">'
 
-                        let name = '<p display="inline-block" id = "name' + j + '" contentEditable="true">' + array[j].name + '</p>'
+                        let name = '<p display="inline-block" class ="name" id = "name' + j + '" contentEditable="true">' + array[j].name + '</p>'
                         studygroup_modal += name
                         console.log(name)
 
-                        let is_public = '<p id = "is_public' + j + '" contentEditable="true" >' + array[j].is_public + '</p>'
+                        let is_public = '<p class ="is_public" id = "is_public' + j + '" contentEditable="true" >' + array[j].is_public + '</p>'
                         studygroup_modal += is_public
 
-                        let max_participants = '<p  id = "max_participants' + j + '" contentEditable="true">' + array[j].max_participants + '</p>'
+                        let max_participants = '<p class ="max_participants" id = "max_participants' + j + '" contentEditable="true">' + array[j].max_participants + '</p>'
                         studygroup_modal += max_participants
 
                         participants = array[j].participants
@@ -253,30 +253,30 @@ search_btn.addEventListener('click', async function (event) {
                         let st_date = array[j].start_date
                         let final_date = st_date.split("T", 1)[0]
                         console.log(final_date)
-                        let start_date = '<p id = "start_date' + j + '" contentEditable="true" >' + final_date + '</p>'
+                        let start_date = '<p class ="start_date" id = "start_date' + j + '" contentEditable="true" >' + final_date + '</p>'
                         studygroup_modal += start_date
 
                         let en_date = array[j].end_date
                         let fin_date = en_date.split("T", 1)[0]
                         console.log(final_date)
-                        let end_date = '<p id = "end_date' + j + '" contentEditable="true" >' + fin_date + '</p>'
+                        let end_date = '<p class ="end_date" id = "end_date' + j + '" contentEditable="true" >' + fin_date + '</p>'
                         studygroup_modal += end_date
 
-                        let school = '<p id = "school' + j + '" contentEditable="true" >' + array[j].school + '</p>'
+                        let school = '<p class ="school" id = "school' + j + '" contentEditable="true" >' + array[j].school + '</p>'
                         studygroup_modal += school
 
-                        let description = '<p id = "description' + j + '" contentEditable="true" >' + array[j].description + '</p>'
+                        let description = '<p class ="description" id = "description' + j + '" contentEditable="true" >' + array[j].description + '</p>'
                         studygroup_modal += description
 
-                        let course_number = '<p id = "course_number' + j + '" contentEditable="true" >' + array[j].course_number + '</p>'
+                        let course_number = '<p class ="cource_number" id = "course_number' + j + '" contentEditable="true" >' + array[j].course_number + '</p>'
                         studygroup_modal += course_number
 
                         let arr = array[j].meeting_times
                         console.log(arr)
                         let meeting_times = '<div id="meeting_times">MEETING TIMES'
                         for (let k = 0; k < arr.length; k++) {
-                            meeting_times += '<p id = "day' + j + '" contentEditable="true" >' + arr[k].day + '</p>' + '<p id = "time' + j + '" contentEditable="true">' + arr[k].time + '</p>' +
-                                '<p id = "location' + j + '" contentEditable="true"> ' + arr[k].location + '</p>'
+                            meeting_times += '<p class ="day" id = "day' + j + '" contentEditable="true" >' + arr[k].day + '</p>' + '<p class ="time" id = "time' + j + '" contentEditable="true">' + arr[k].time + '</p>' +
+                                '<p class ="location" id = "location' + j + '" contentEditable="true"> ' + arr[k].location + '</p>'
 
                         }
 
@@ -306,14 +306,14 @@ search_btn.addEventListener('click', async function (event) {
                     else if (JSON.stringify(array[j].owner) != realUserId && (owner.value == "" || owner.value == "false")) {
 
                         studygroup_modal = '<div id="studygroup_modal">'
-                        let name = '<p display="inline-block" id = "name">' + array[j].name + '</p>'
+                        let name = '<p display="inline-block" class ="name" id = "name">' + array[j].name + '</p>'
                         studygroup_modal += name
                         console.log(name)
 
-                        let is_public = '<p id = "is_public" >' + array[j].is_public + '</p>'
+                        let is_public = '<p class ="is_public" id = "is_public" >' + array[j].is_public + '</p>'
                         studygroup_modal += is_public
 
-                        let max_participants = '<p  id = "max_participants">' + array[j].max_participants + '</p>'
+                        let max_participants = '<p class ="max_participants"  id = "max_participants">' + array[j].max_participants + '</p>'
                         studygroup_modal += max_participants
 
                         participants = array[j].participants
@@ -348,30 +348,30 @@ search_btn.addEventListener('click', async function (event) {
                         let st_date = array[j].start_date
                         let final_date = st_date.split("T", 1)[0]
                         console.log(final_date)
-                        let start_date = '<p id = "start_date">' + final_date + '</p>'
+                        let start_date = '<p class ="start_date" id = "start_date">' + final_date + '</p>'
                         studygroup_modal += start_date
 
                         let en_date = array[j].end_date
                         let fin_date = en_date.split("T", 1)[0]
                         console.log(final_date)
-                        let end_date = '<p id = "end_date">' + fin_date + '</p>'
+                        let end_date = '<p class ="end_date" id = "end_date">' + fin_date + '</p>'
                         studygroup_modal += end_date
 
-                        let school = '<p id = "school" >' + array[j].school + '</p>'
+                        let school = '<p class ="school" id = "school" >' + array[j].school + '</p>'
                         studygroup_modal += school
 
-                        let description = '<p id = "description" >' + array[j].description + '</p>'
+                        let description = '<p class ="description" id = "description" >' + array[j].description + '</p>'
                         studygroup_modal += description
 
-                        let course_number = '<p id = "course_number" >' + array[j].course_number + '</p>'
+                        let course_number = '<p class ="course_number" id = "course_number" >' + array[j].course_number + '</p>'
                         studygroup_modal += course_number
 
                         let arr = array[j].meeting_times
                         console.log(arr)
-                        let meeting_times = '<div id="meeting_times">MEETING TIMES'
+                        let meeting_times = '<div class ="meeting_times" id="meeting_times">MEETING TIMES'
                         for (let k = 0; k < arr.length; k++) {
-                            meeting_times += '<p id = "day" >' + arr[k].day + '</p>' + '<p id = "time">' + arr[k].time + '</p>' +
-                                '<p id = "location"> ' + arr[k].location + '</p>'
+                            meeting_times += '<p class ="day" id = "day" >' + arr[k].day + '</p>' + '<p class ="time" id = "time">' + arr[k].time + '</p>' +
+                                '<p class ="location" id = "location"> ' + arr[k].location + '</p>'
 
                         }
                         meeting_times += '</div>'
@@ -388,7 +388,7 @@ search_btn.addEventListener('click', async function (event) {
                         }
                             if (((array[j].participants == undefined) || (is_User != true)) || member.value == "false") {
 
-                                array[j].addBtn = '<button type="button" class="add' + j + '" id="add' + j + '"> JOIN </button>'
+                                array[j].addBtn = '<button type="button" class="add" id="add' + j + '"> JOIN </button>'
                                 let addBtn = array[j].addBtn
                                 studygroup_modal += addBtn
                                 studygroup_modal += '</div>'
@@ -402,7 +402,7 @@ search_btn.addEventListener('click', async function (event) {
 
                             else if (((array[j].participants != undefined) || (is_User == true)) && (member.value == "true" || member.value == "")) {
 
-                                array[j].removeBtn = '<button type="button" class="remove' + j + '" id="remove' + j + '"> LEAVE </button>'
+                                array[j].removeBtn = '<button type="button" class="remove" id="remove' + j + '"> LEAVE </button>'
                                 let removeBtn = array[j].removeBtn
                                 studygroup_modal += removeBtn
                                 studygroup_modal += '</div>'

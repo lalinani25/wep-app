@@ -163,102 +163,56 @@ h2{
     border-radius: 10px;
 }
 
-#name0::before{
+/*Displaying Studygroups*/
+
+.name::before{
      content: "STUDYGROUP NAME: ";    
 }
 
-#is_public0::before{
+.is_public::before{
     content: "PUBLIC: ";    
 }
 
-#max_participants0::before{
+.max_participants::before{
     content: "MAX-PARTICIPANTS: ";    
 }
 
-#start_date0::before{
+.start_date::before{
     content: "START DATE: ";    
 }
 
-#end_date0::before{
+.end_date::before{
     content: "END DATE: ";    
 }
 
-#school0::before{
+.school::before{
     content: "SCHOOL: ";    
 }
 
-#description0::before{
+.description::before{
     content: "DESCRIPTION: ";    
 }
 
-#course_number0::before{
+.course_number::before{
     content: "COURSE NUMBER: ";    
 }
 
-#day0::before{
+.day::before{
     display: inline-block;
     content: "DAY: ";    
 }
 
-#time0::before{
+.time::before{
     display: inline-block;
     content: "TIME: ";    
 }
 
-#location0::before{
+.location::before{
     display: inline-block;
     content: "LOCATION: ";    
 }
 
-
-#name1::before{
-    content: "STUDYGROUP NAME: ";    
-}
-
-#is_public1::before{
-   content: "PUBLIC: ";    
-}
-
-#max_participants1::before{
-   content: "MAX-PARTICIPANTS: ";    
-}
-
-#start_date1::before{
-   content: "START DATE: ";    
-}
-
-#end_date1::before{
-   content: "END DATE: ";    
-}
-
-#school1::before{
-   content: "SCHOOL: ";    
-}
-
-#description1::before{
-   content: "DESCRIPTION: ";    
-}
-
-#course_number1::before{
-   content: "COURSE NUMBER: ";    
-}
-
-#day1::before{
-   display: inline-block;
-   content: "DAY: ";    
-}
-
-#time1::before{
-   display: inline-block;
-   content: "TIME: ";    
-}
-
-#location1::before{
-   display: inline-block;
-   content: "LOCATION: ";    
-}
-
-button[id='editBtn0'] {
+button[class='editBtn'] {
     width: 40%;
     background-color: #1c122bdc;
     color: white;
@@ -269,11 +223,11 @@ button[id='editBtn0'] {
     cursor: pointer;
 }
 
-button[id='editBtn0']:hover {
+button[class='editBtn']:hover {
     background-color: #1c122b;
 }
 
-button[id='deleteBtn0'] {
+button[class='deleteBtn'] {
    width: 40%;
    background-color: #1c122bdc;
    color: white;
@@ -284,113 +238,7 @@ button[id='deleteBtn0'] {
    cursor: pointer;
 }
 
-button[id='deleteBtn0']:hover {
-   background-color: #1c122b;
-}
-
-button[id='editBtn1'] {
-   width: 40%;
-   background-color: #1c122bdc;
-   color: white;
-   padding: 14px 40px;
-   margin: 8px 3px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-button[id='editBtn1']:hover {
-    background-color: #1c122b;
-}
-
-button[id='deleteBtn1'] {
-   width: 40%;
-   background-color: #1c122bdc;
-   color: white;
-   padding: 14px 40px;
-   margin: 8px 3px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-button[id='deleteBtn1']:hover {
-   background-color: #1c122b;
-}
-
-#name2::before{
-    content: "STUDYGROUP NAME: ";    
-}
-
-#is_public2::before{
-   content: "PUBLIC: ";    
-}
-
-#max_participants2::before{
-   content: "MAX-PARTICIPANTS: ";    
-}
-
-#start_date2::before{
-   content: "START DATE: ";    
-}
-
-#end_date2::before{
-   content: "END DATE: ";    
-}
-
-#school2::before{
-   content: "SCHOOL: ";    
-}
-
-#description2::before{
-   content: "DESCRIPTION: ";    
-}
-
-#course_number2::before{
-   content: "COURSE NUMBER: ";    
-}
-
-#day2::before{
-   display: inline-block;
-   content: "DAY: ";    
-}
-
-#time2::before{
-   display: inline-block;
-   content: "TIME: ";    
-}
-
-#location2::before{
-   display: inline-block;
-   content: "LOCATION: ";    
-}
-
-button[id='editBtn2'] {
-   width: 40%;
-   background-color: #1c122bdc;
-   color: white;
-   padding: 14px 40px;
-   margin: 8px 3px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-button[id='editBtn2']:hover {
-    background-color: #1c122b;
-}
-button[id='deleteBtn2'] {
-   width: 40%;
-   background-color: #1c122bdc;
-   color: white;
-   padding: 14px 40px;
-   margin: 8px 3px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-button[id='deleteBtn2']:hover {
+button[class='deleteBtn']:hover {
    background-color: #1c122b;
 }
 
@@ -411,220 +259,7 @@ button[id='my_studygroups']:hover {
     background-color: #1c122b;
 }
 
-#name::before{
-    content: "STUDYGROUP NAME: ";    
-}
-#is_public::before{
-    content: "PUBLIC: ";    
- }
- 
- #max_participants::before{
-    content: "MAX-PARTICIPANTS: ";    
- }
- 
- #start_date::before{
-    content: "START DATE: ";    
- }
- 
- #end_date::before{
-    content: "END DATE: ";    
- }
- 
- #school::before{
-    content: "SCHOOL: ";    
- }
- 
- #description::before{
-    content: "DESCRIPTION: ";    
- }
- 
- #course_number::before{
-    content: "COURSE NUMBER: ";    
- }
- 
- #day::before{
-    display: inline-block;
-    content: "DAY: ";    
- }
- 
- #time::before{
-    display: inline-block;
-    content: "TIME: ";    
- }
- 
- #location::before{
-    display: inline-block;
-    content: "LOCATION: ";    
- }
- 
- button[id='editBtn'] {
-     width: 100%;
-     background-color: #1c122bdc;
-     color: white;
-     padding: 14px 20px;
-     margin: 8px 0;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
- }
- 
- button[id='editBtn']:hover {
-     background-color: #1c122b;
- }
- 
- #name3::before{
-    content: "STUDYGROUP NAME: ";    
-}
-#is_public3::before{
-    content: "PUBLIC: ";    
- }
- 
- #max_participants3::before{
-    content: "MAX-PARTICIPANTS: ";    
- }
- 
- #start_date3::before{
-    content: "START DATE: ";    
- }
- 
- #end_date3::before{
-    content: "END DATE: ";    
- }
- 
- #school3::before{
-    content: "SCHOOL: ";    
- }
- 
- #description3::before{
-    content: "DESCRIPTION: ";    
- }
- 
- #course_number3::before{
-    content: "COURSE NUMBER: ";    
- }
- 
- #day3::before{
-    display: inline-block;
-    content: "DAY: ";    
- }
- 
- #time3::before{
-    display: inline-block;
-    content: "TIME: ";    
- }
- 
- #location3::before{
-    display: inline-block;
-    content: "LOCATION: ";    
- }
- 
- button[id='editBtn3'] {
-   width: 40%;
-   background-color: #1c122bdc;
-   color: white;
-   padding: 14px 40px;
-   margin: 8px 3px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
- }
- 
- button[id='editBtn3']:hover {
-     background-color: #1c122b;
- }
- 
- button[id='deleteBtn3'] {
-   width: 40%;
-   background-color: #1c122bdc;
-   color: white;
-   padding: 14px 40px;
-   margin: 8px 3px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-button[id='deleteBtn3']:hover {
-   background-color: #1c122b;
-}
- 
- #name4::before{
-    content: "STUDYGROUP NAME: ";    
-}
-#is_public4::before{
-    content: "PUBLIC: ";    
- }
- 
- #max_participants4::before{
-    content: "MAX-PARTICIPANTS: ";    
- }
- 
- #start_date4::before{
-    content: "START DATE: ";    
- }
- 
- #end_date4::before{
-    content: "END DATE: ";    
- }
- 
- #school4::before{
-    content: "SCHOOL: ";    
- }
- 
- #description4::before{
-    content: "DESCRIPTION: ";    
- }
- 
- #course_number4::before{
-    content: "COURSE NUMBER: ";    
- }
- 
- #day4::before{
-    display: inline-block;
-    content: "DAY: ";    
- }
- 
- #time4::before{
-    display: inline-block;
-    content: "TIME: ";    
- }
- 
- #location4::before{
-    display: inline-block;
-    content: "LOCATION: ";    
- }
- 
- button[id='editBtn4'] {
-     width: 40%;
-     background-color: #1c122bdc;
-     color: white;
-     padding: 14px 20px;
-     margin: 8px 0;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
- }
- 
- button[id='editBtn4']:hover {
-     background-color: #1c122b;
- }
-
- button[id='deleteBtn4'] {
-   width: 40%;
-   background-color: #1c122bdc;
-   color: white;
-   padding: 14px 40px;
-   margin: 8px 3px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-button[id='deleteBtn4']:hover {
-   background-color: #1c122b;
-}
- 
-button[id='add1'] {
+button[class='add'] {
    width: 100%;
    background-color: #1c122bdc;
    color: white;
@@ -635,11 +270,11 @@ button[id='add1'] {
    cursor: pointer;
 }
 
-button[id='add1']:hover {
+button[class='add']:hover {
    background-color: #1c122b;
 }
- 
-button[id='add2'] {
+
+button[class='remove'] {
    width: 100%;
    background-color: #1c122bdc;
    color: white;
@@ -650,36 +285,6 @@ button[id='add2'] {
    cursor: pointer;
 }
 
-button[id='add2']:hover {
-   background-color: #1c122b;
-}
-
-button[id='remove1'] {
-   width: 100%;
-   background-color: #1c122bdc;
-   color: white;
-   padding: 14px 40px;
-   margin: 8px 3px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-button[id='remove1']:hover {
-   background-color: #1c122b;
-}
-
-button[id='remove2'] {
-   width: 100%;
-   background-color: #1c122bdc;
-   color: white;
-   padding: 14px 40px;
-   margin: 8px 3px;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-button[id='remove2']:hover {
+button[class='remove']:hover {
    background-color: #1c122b;
 }
