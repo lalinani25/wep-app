@@ -418,7 +418,7 @@ search_btn.addEventListener('click', async function (event) {
                                 is_User = true
                             }
                         }
-                            if (((array[j].participants == undefined) || (is_User != true)) || member.value == "false") {
+                            if ((((array[j].participants == undefined) || (is_User != true)) || member.value == "false") && (array[j].is_public == true)) {
 
                                 array[j].addBtn = '<button type="button" class="add" id="add' + j + '"> JOIN </button>'
                                 let addBtn = array[j].addBtn
@@ -626,6 +626,7 @@ search_btn.addEventListener('click', async function (event) {
                             url = `https://studdy-buddy-api-server.azurewebsites.net/studygroup/${array[i]._id}`
 
                             console.log(url)
+
                             let n = `name${i}`
                             let ip = `is_public${i}`
                             let mp = `max_participants${i}`
@@ -657,10 +658,13 @@ search_btn.addEventListener('click', async function (event) {
                                 course_number: course_number,
                             };
 
+                            console.log(url)
                             console.log(studygroupData)
                             console.log("test")
 
                             try {
+                                console.log("Studygroup")
+                                
                                 let response = await fetch(url, {
                                     method: 'PATCH',
                                     headers: {
