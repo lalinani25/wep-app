@@ -230,21 +230,27 @@ search_btn.addEventListener('click', async function (event) {
                         let is_public = '<p class ="is_public" id = "is_public' + j + '" contentEditable="true" >' + array[j].is_public + '</p>'
                         studygroup_modal += is_public
 
-                        let max_participants = '<p class ="max_participants" id = "max_participants' + j + '" contentEditable="true">' + array[j].max_participants + '</p>'
-                        studygroup_modal += max_participants
+                        let owner = '<p class="owner" id = "owner_name' + j + '" >' + data1[0].owner + '</p>'
+                        studygroup_modal += owner
 
                         participants = array[j].participants
-                        let participant = '<div id="participants">PARTICIPANTS:'
 
+                        let max_participants = '<p class ="max_participants" id = "max_participants' + j + '" contentEditable="true">' + participants.length +'/' + array[j].max_participants+ '</p>'
+                        studygroup_modal += max_participants
+
+                        let participant = '<div id="participants">PARTICIPANTS LIST:'
+                        
 
                         if (!(participants.length === 0)) {
-                            for (let k = 0; k < participants.length; k++) {
-                                console.log(participants[k])
-                                participant += '<p id = "p_name' + j + '" >' + data1[k].username + '</p>'
-
+                    
+                            for (let k = 0; k < data1.length; k++) {
+                                console.log(data1[k])
+                                let p = [] 
+                                p = data1[k].participants
+                                participant += '<p id = "p_name' + j + '" >' + p.username + '</p>'
                             }
                         } else {
-                            participant += '<p id = "p_name">No Participants</p>'
+                            participant += '<p id = "p_name">There are no participants in this studygroup!</p>'
                         }
 
                         participant += '</div>'
@@ -313,13 +319,19 @@ search_btn.addEventListener('click', async function (event) {
                         let is_public = '<p class ="is_public" id = "is_public" >' + array[j].is_public + '</p>'
                         studygroup_modal += is_public
 
-                        let max_participants = '<p class ="max_participants"  id = "max_participants">' + array[j].max_participants + '</p>'
-                        studygroup_modal += max_participants
+                        let owner = '<p class="owner" id = "owner_name' + j + '" >' + data1[0].owner + '</p>'
+                        studygroup_modal += owner
 
                         participants = array[j].participants
 
+                        let max_participants = '<p class ="max_participants"  id = "max_participants">' +participants.length +'/' + array[j].max_participants  + '</p>'
+                        '<p id = "p_name">' + participants.length +'/' + array[j].max_participants +'</p>'
+                        studygroup_modal += max_participants
+
+                        
+
                         console.log(participants)
-                        let participant = '<div id="participants">PARTICIPANTS:'
+                        let participant = '<div id="participants">PARTICIPANTS LIST:'
 
                         let is_User;
 
@@ -329,19 +341,39 @@ search_btn.addEventListener('click', async function (event) {
                             }
                         }
 
-                        if (!(participants.length === 0) && (is_User == true)) {
-
-                            for (let k = 0; k < participants.length; k++) {
-
-                                console.log(participants[k])
-                                participant += '<p id = "p_name' + j + '" >' + data1[k].username + '</p>'
-
+                        if (!(participants.length === 0) && (is_User == true) && (array[j].is_public == true)) {
+                            
+                            for (let k = 0; k < data1.length; k++) {
+                                console.log(data1[k])
+                                let p = [] 
+                                p = data1[k].participants
+                                participant += '<p id = "p_name' + j + '" >' + p.username + '</p>'
                             }
 
                         }
-                        else {
-                            participant += '<p id = "p_name">' + participants.length +'/' + array[j].max_participants +'</p>'
+                        else if (!(participants.length === 0) && (is_User != true) && (array[j].is_public == true)) {
+                            for (let k = 0; k < data1.length; k++) {
+                                console.log(data1[k])
+                                let p = [] 
+                                p = data1[k].participants
+                                participant += '<p id = "p_name' + j + '" >' + p.username + '</p>'
+                            }
                         }
+                        else if (!(participants.length === 0) && (is_User == true) && (array[j].is_public == false)) {
+                            for (let k = 0; k < data1.length; k++) {
+                                console.log(data1[k])
+                                let p = [] 
+                                p = data1[k].participants
+                                participant += '<p id = "p_name' + j + '" >' + p.username + '</p>'
+                            }
+                        }
+                        else if(!(participants.length === 0) && (is_User != true) && (array[j].is_public == false)){
+                                participant += '<p id = "p_name">Join group to see participants!</p>'
+                        }
+                        else if(participants.length === 0){
+                            participant += '<p id = "p_name">There are no participants in this studygroup!</p>'
+                        }
+
                         participant += '</div>'
                         studygroup_modal += participant
 

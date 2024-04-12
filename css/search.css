@@ -173,8 +173,12 @@ h2{
     content: "PUBLIC: ";    
 }
 
+.owner::before{
+    content: "OWNER: ";    
+}
+
 .max_participants::before{
-    content: "MAX-PARTICIPANTS: ";    
+    content: "PARTICIPANTS NUMBER: ";    
 }
 
 .start_date::before{
