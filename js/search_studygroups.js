@@ -432,7 +432,7 @@ search_btn.addEventListener('click', async function (event) {
 
                             //Displaying Leave Button if member in studygroup
 
-                            else if (((array[j].participants != undefined) || (is_User == true)) && (member.value == "true" || member.value == "")) {
+                            else if (((array[j].participants != undefined) && (is_User == true)) && (member.value == "true" || member.value == "")) {
 
                                 array[j].removeBtn = '<button type="button" class="remove" id="remove' + j + '"> LEAVE </button>'
                                 let removeBtn = array[j].removeBtn
@@ -440,6 +440,10 @@ search_btn.addEventListener('click', async function (event) {
                                 studygroup_modal += '</div>'
                                 document.body.innerHTML += studygroup_modal;
 
+                            }
+                            else{
+                                studygroup_modal += '</div>'
+                                document.body.innerHTML += studygroup_modal;
                             }
                         
                         console.log("test-line 394")
