@@ -4,6 +4,7 @@ const message = document.querySelector("p");
 const token = localStorage.getItem("token");
 const mssg = document.querySelector("p");
 
+
 let studygroup_modal;
 let participants = [];
 let add;
@@ -11,6 +12,8 @@ let remove;
 let data1 = []
 let array = []
 let my_array = []
+let notificationBtn = []
+let p_info = []
 
 search_btn.addEventListener('click', async function (event) {
 
@@ -230,24 +233,28 @@ search_btn.addEventListener('click', async function (event) {
                         let is_public = '<p class ="is_public" id = "is_public' + j + '" contentEditable="true" >' + array[j].is_public + '</p>'
                         studygroup_modal += is_public
 
-                        let owner = '<p class="owner" id = "owner_name' + j + '" >' + data1[0].owner + '</p>'
+                        let o = data1[0].owner
+                        let owner = '<p class="owner"  id = "owner_name' + j + '" >' + o.username + '</p>'
                         studygroup_modal += owner
 
                         participants = array[j].participants
 
-                        let max_participants = '<p class ="max_participants" id = "max_participants' + j + '" contentEditable="true">' + participants.length +'/' + array[j].max_participants+ '</p>'
+                        let max_participants = '<p class ="max_participants" id = "max_participants' + j + '" contentEditable="true">' + participants.length + '/' + array[j].max_participants + '</p>'
                         studygroup_modal += max_participants
 
-                        let participant = '<div id="participants">PARTICIPANTS LIST:'
-                        
+                        let participant = '<div id="participants">PARTICIPANTS LIST:<br> <br>'
+
 
                         if (!(participants.length === 0)) {
-                    
+
                             for (let k = 0; k < data1.length; k++) {
                                 console.log(data1[k])
-                                let p = [] 
+                                let p = []
                                 p = data1[k].participants
-                                participant += '<p id = "p_name' + j + '" >' + p.username + '</p>'
+                               p_info.push(p)
+                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + p._id + '" style="font-size:24px display:inline">&#9993;</button>'
+                                p.messageBtnId = 'notificationBtn' + p._id
+                                participant += '<p style=" display:inline" id = "p_name' + j + '" >' + p.username + '</p>' + p.messageBtn + ' <br><br>'
                             }
                         } else {
                             participant += '<p id = "p_name">There are no participants in this studygroup!</p>'
@@ -319,58 +326,107 @@ search_btn.addEventListener('click', async function (event) {
                         let is_public = '<p class ="is_public" id = "is_public" >' + array[j].is_public + '</p>'
                         studygroup_modal += is_public
 
-                        let owner = '<p class="owner" id = "owner_name' + j + '" >' + data1[0].owner + '</p>'
+                        let o = data1[0].owner
+                        
+                        o.messageBtn = '<button style=" display:inline" class = "notificationBtn" id = "notificationBtn' + o._id  + '" style="font-size:24px display:inline">&#9993;</button>'
+                   /*     for(let m = 0; m < p_info.length; m++){
+                            console.log(p_info[m])
+                            console.log(o)
+                            if(p_info[m]._id == o._id){
+                                console.log("already there")
+                            }
+                            else{
+                                p_info.push(o)
+                            }
+                        }
+                        */
+                        p_info.push(o)
+                        let owner = '<p class="owner" style=" display:inline" id = "owner_name' + j + '" >' + o.username + '</p>' + o.messageBtn + '<br>'
                         studygroup_modal += owner
-
-                        participants = array[j].participants
-
-                        let max_participants = '<p class ="max_participants"  id = "max_participants">' +participants.length +'/' + array[j].max_participants  + '</p>'
-                        '<p id = "p_name">' + participants.length +'/' + array[j].max_participants +'</p>'
-                        studygroup_modal += max_participants
+                        
+                        console.log(o)
+                       
 
                         
 
+                        participants = array[j].participants
+
+                        let max_participants = '<p class ="max_participants"  id = "max_participants">' + participants.length + '/' + array[j].max_participants + '</p>'
+                        '<p id = "p_name">' + participants.length + '/' + array[j].max_participants + '</p>'
+                        studygroup_modal += max_participants
+
+
+
                         console.log(participants)
-                        let participant = '<div id="participants">PARTICIPANTS LIST:'
+                        let participant = '<div id="participants">PARTICIPANTS LIST:<br><br>'
 
                         let is_User;
 
                         for (let k = 0; k < participants.length; k++) {
-                            if(realUserId == JSON.stringify(array[j].participants[k])){
+                            if (realUserId == JSON.stringify(array[j].participants[k])) {
                                 is_User = true
                             }
                         }
 
                         if (!(participants.length === 0) && (is_User == true) && (array[j].is_public == true)) {
-                            
+
                             for (let k = 0; k < data1.length; k++) {
                                 console.log(data1[k])
-                                let p = [] 
+                                let p = []
                                 p = data1[k].participants
-                                participant += '<p id = "p_name' + j + '" >' + p.username + '</p>'
+                                participant += '<p style=" display:inline" id = "p_name' + j + '" >' + p.username + '</p> <br><br>'
                             }
 
                         }
                         else if (!(participants.length === 0) && (is_User != true) && (array[j].is_public == true)) {
                             for (let k = 0; k < data1.length; k++) {
                                 console.log(data1[k])
-                                let p = [] 
+                                let p = []
                                 p = data1[k].participants
-                                participant += '<p id = "p_name' + j + '" >' + p.username + '</p>'
+                               
+                               /* for(let m = 0; m < p_info.length; m++){
+                                    console.log(p_info[m])
+                                    console.log(p)
+                                    if(p_info[m]._id == p._id){
+                                        console.log("already there")
+                                    }
+                                    else{
+                                        p_info.push(p)
+                                    }
+                                }
+                                */
+                                p_info.push(p)
+                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + p._id + '" style="font-size:24px display:inline">&#9993;</button>'
+                                p.messageBtnId = 'notificationBtn' + p._id
+                                participant += '<p style=" display:inline"  id = "p_name' + j + '" >' + p.username + '</p>' + p.messageBtn + '<br>'
                             }
                         }
                         else if (!(participants.length === 0) && (is_User == true) && (array[j].is_public == false)) {
                             for (let k = 0; k < data1.length; k++) {
                                 console.log(data1[k])
-                                let p = [] 
+                                let p = []
                                 p = data1[k].participants
-                                participant += '<p id = "p_name' + j + '" >' + p.username + '</p>'
+                              /*  for(let m = 0; m < p_info.length; m++){
+                                    console.log(p_info[m])
+                                    console.log(p)
+                                    if(p_info[m]._id == p._id){
+                                        console.log("already there")
+                                    }
+                                    else{
+                                        p_info.push(p)
+                                    }
+                                }
+                                */
+                                p_info.push(p)
+                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + p._id + '" style="font-size:24px display:inline">&#9993;</button>'
+                                p.messageBtnId = 'notificationBtn' + p._id
+                                participant += '<p style=" display:inline" id = "p_name' + j + '" >' + p.username + '</p>'+ p.messageBtn + '<br><br>'
                             }
                         }
-                        else if(!(participants.length === 0) && (is_User != true) && (array[j].is_public == false)){
-                                participant += '<p id = "p_name">Join group to see participants!</p>'
+                        else if (!(participants.length === 0) && (is_User != true) && (array[j].is_public == false)) {
+                            participant += '<p id = "p_name">Join group to see participants!</p>'
                         }
-                        else if(participants.length === 0){
+                        else if (participants.length === 0) {
                             participant += '<p id = "p_name">There are no participants in this studygroup!</p>'
                         }
 
@@ -412,46 +468,204 @@ search_btn.addEventListener('click', async function (event) {
                         let addBtn = []
                         console.log(JSON.stringify(array[j].participants))
 
-                    
+
                         for (let k = 0; k < participants.length; k++) {
-                            if(realUserId == JSON.stringify(array[j].participants[k])){
+                            if (realUserId == JSON.stringify(array[j].participants[k])) {
                                 is_User = true
                             }
                         }
-                            if ((((array[j].participants == undefined) || (is_User != true)) || member.value == "false") && (array[j].is_public == true)) {
+                        if ((((array[j].participants == undefined) || (is_User != true)) || member.value == "false") && (array[j].is_public == true)) {
 
-                                array[j].addBtn = '<button type="button" class="add" id="add' + j + '"> JOIN </button>'
-                                let addBtn = array[j].addBtn
-                                studygroup_modal += addBtn
-                                studygroup_modal += '</div>'
-                                console.log(studygroup_modal)
-                                if (member.value != "true") {
-                                    document.body.innerHTML += studygroup_modal;
-                                }
-                            }
-
-                            //Displaying Leave Button if member in studygroup
-
-                            else if (((array[j].participants != undefined) && (is_User == true)) && (member.value == "true" || member.value == "")) {
-
-                                array[j].removeBtn = '<button type="button" class="remove" id="remove' + j + '"> LEAVE </button>'
-                                let removeBtn = array[j].removeBtn
-                                studygroup_modal += removeBtn
-                                studygroup_modal += '</div>'
-                                document.body.innerHTML += studygroup_modal;
-
-                            }
-                            else{
-                                studygroup_modal += '</div>'
+                            array[j].addBtn = '<button type="button" class="add" id="add' + j + '"> JOIN </button>'
+                            let addBtn = array[j].addBtn
+                            studygroup_modal += addBtn
+                            studygroup_modal += '</div>'
+                            console.log(studygroup_modal)
+                            if (member.value != "true") {
                                 document.body.innerHTML += studygroup_modal;
                             }
-                        
+                        }
+
+                        //Displaying Leave Button if member in studygroup
+
+                        else if (((array[j].participants != undefined) && (is_User == true)) && (member.value == "true" || member.value == "")) {
+
+                            array[j].removeBtn = '<button type="button" class="remove" id="remove' + j + '"> LEAVE </button>'
+                            let removeBtn = array[j].removeBtn
+                            studygroup_modal += removeBtn
+                            studygroup_modal += '</div>'
+                            document.body.innerHTML += studygroup_modal;
+
+                        }
+                        else {
+                            studygroup_modal += '</div>'
+                            document.body.innerHTML += studygroup_modal;
+                        }
+
                         console.log("test-line 394")
                     }
                     console.log("test-line 396")
+
                 }
 
                 console.table(array)
+
+                console.log(data1)
+
+             function removeDuplicates() {
+ 
+                    let jsonObject = p_info.map(JSON.stringify);
+                    let uniqueSet = new Set(jsonObject);
+                    let uniqueArray = Array.from(uniqueSet).map(JSON.parse);
+                    console.log(uniqueArray);
+                    p_info = uniqueArray
+                    
+                }
+              removeDuplicates();
+
+              let value = p_info[1]
+             
+              
+              p_info = p_info.filter(function(item) {
+                  return item !== value
+              })
+
+              let value1 = p_info[4]
+              p_info = p_info.filter(function(item) {
+                return item !== value1
+              })
+                console.log(p_info)
+
+                //Message Modal
+                let modal = document.getElementById("message_modal");
+
+                // When the user clicks the button, open the modal 
+                for (let i = 0; i < p_info.length; i++) {
+
+                    let p = p_info[i]
+
+                    console.log(p)
+
+                    if (p.hasOwnProperty('messageBtn')) {
+                        let n = `notificationBtn${p._id}`
+                        let b = n.substring(15,39)
+                        console.log(b)
+                        let pd =  p._id
+                        console.log(pd)
+                    
+                        
+                        console.log(p)
+                        console.log(n)
+                        console.log(p_info)
+                        console.log(modal)
+
+                        document.getElementById(n).addEventListener('click', async () => {
+                            modal.style.display = "block";
+                           // const newButton = document.createElement('button');
+                           // newButton.textContent = 'SAVE';
+                           // newButton.setAttribute("id", `sendNotificationBtn${p._id}`)
+
+                           // let targetDiv = document.getElementById("info2");
+
+                            // Append the button to the target div
+                           // targetDiv.appendChild(newButton);
+
+                            console.log(modal)
+                            window.onclick = function (event) {
+                                if (event.target == modal) {
+                                    modal.style.display = "none";
+                                }
+                            }
+                       
+
+
+
+                        console.log("test3")
+
+                        let subject
+                        let body
+                    
+                        document.getElementById("sendNotificationBtn").addEventListener('click', async function (event) {
+
+                            //getting values from form
+                            subject = document.querySelector('#subject').value;
+                            let user1 = JSON.parse(user)
+                            let sender = user1._id;
+                            console.log(sender)
+                            body = document.querySelector('#message_body').value;
+
+                            let receiver
+                           
+                           if(b == pd){
+                            receiver = p._id;
+                            
+
+                           }
+                            let notificationData = {
+                                sender: sender,
+                                receiver: receiver,
+                                subject: subject,
+                                body: body,
+                            };
+
+                            console.log(notificationData)
+                            createNotification(notificationData);
+                        
+
+                        });
+
+                
+                        //fetching the data
+                        async function createNotification(notificationData) {
+                            const mssg = document.querySelector("p");
+                            const url = "https://studdy-buddy-api-server.azurewebsites.net/notification";
+                            console.log("test")
+                            try {
+                                console.log("test3")
+                                const response = await fetch(url, {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "Authorization": `Bearer ${token}`
+                                    },
+                                    body: JSON.stringify(notificationData)
+                                });
+
+                                if (response.ok) {
+                                    mssg.innerHTML = 'Notification was successfully sent!';
+                                    mssg.style.color = 'white';
+                                    location.reload;
+                                    
+
+                                } else {
+                                    const errorData = await response.json();
+                                    mssg.innerHTML = "Error: " + errorData.message;
+                                    mssg.style.color = 'red';
+                                }
+                            } catch (error) {
+                                mssg.innerHTML = "Error: An error occurred";
+                                mssg.style.color = 'red';
+                            }
+                        }
+                    
+                    
+                    })
+                
+                    }
+
+            
+                        let span = document.getElementsByClassName("close")[0];
+                        console.log("test2")
+
+                        span.addEventListener('click', async () => {
+                            modal.style.display = "none";
+                        })
+
+                    
+                }
+
+
+
 
                 //Join Studygroup
 
@@ -491,6 +705,7 @@ search_btn.addEventListener('click', async function (event) {
                                 mssg.style.color = 'red';
                             }
                         })
+
 
                     }
 
@@ -668,7 +883,7 @@ search_btn.addEventListener('click', async function (event) {
 
                             try {
                                 console.log("Studygroup")
-                                
+
                                 let response = await fetch(url, {
                                     method: 'PATCH',
                                     headers: {
@@ -699,7 +914,7 @@ search_btn.addEventListener('click', async function (event) {
                         })
                     }
                 }
-                
+
             } else {
                 const errorData = await response.json();
                 mssg.innerHTML = "Error: " + errorData.message;
@@ -709,6 +924,7 @@ search_btn.addEventListener('click', async function (event) {
             mssg.innerHTML = "Error: An error occurred";
             mssg.style.color = 'red';
         }
+
     }
 
     searchStudygroups()

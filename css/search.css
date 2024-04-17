@@ -45,6 +45,13 @@ li a:hover:not(.active) {
     text-align: center;
 }
 
+#info2{
+    border-radius: 5px;
+    background-color: #7b6691;
+    padding: 20px;
+    text-align: center;
+}
+
 input[type=text],
 select {
     width: 100%;
@@ -216,6 +223,29 @@ h2{
     content: "LOCATION: ";    
 }
 
+.notifications{
+    display: inline-block;
+    background-color:#7b6691;
+    border: #1c122b;
+    border-style:double;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: #1c122b;
+    padding: 10px;
+    margin: 40px;
+    text-align: center;
+    width: 40%;
+    white-space: nowrap;
+}
+
+.not_subject::before{
+    content: "SUBJECT: ";    
+}
+
+.not_body::before{
+    content: "MESSAGE: ";    
+}
+
 button[class='editBtn'] {
     width: 40%;
     background-color: #1c122bdc;
@@ -292,3 +322,28 @@ button[class='remove'] {
 button[class='remove']:hover {
    background-color: #1c122b;
 }
+
+button[class='notificationBtn'] {
+    background-color: #1c122bdc;
+    color: white;
+    cursor: pointer;
+ }
+ 
+ button[class='notificationBtn']:hover {
+    background-color: #1c122b;
+ }
+ 
+ button[class='sendNotificationBtn'] {
+    width: 40%;
+    background-color: #1c122bdc;
+    color: white;
+    padding: 14px 40px;
+    margin: 8px 3px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+ 
+ button[class='sendNotificationBtn']:hover {
+    background-color: #1c122b;
+ }

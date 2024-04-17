@@ -10,13 +10,15 @@
         <li><a class="active" href="main.html">MAIN</a></li>
         <li><a href="createStudygroup.html">CREATE STUDYGROUP</a></li>
         <li style="float:right" id="logout" type="button"><a>LOG OUT</a></li>
-        <li style="float:right"><a href="#"><i class="fa fa-fw fa-search" type="button" id="open_search"></i>SEARCH STUDYGROUPS</a></li>
-     
+        <li style="float:right"><a href="#"><i class="fa fa-fw fa-search" type="button" id="open_search"></i>SEARCH
+                STUDYGROUPS</a></li>
+        <li style="float:right" id="myNotificationsButton" type="button"><a>NOTIFICATIONS</a></li>
+
     </ul>
 
     <h2 id="sg">Looks like you are not part of a studygroup yet. Try seaching for studygroups!</h2>
 
-   
+
     <button id="my_studygroups">MY STUDYGROUPS</button>
 
     <div id="myModal" class="modal">
@@ -48,16 +50,38 @@
             </div>
             <p></p>
         </div>
-
-        <p></p>
     </div>
+    <!-- The Message Modal -->
+    <div id="message_modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal_content">
+            <span class="close">&times;</span>
+            <div id="info2" >
+                <label for="subject">SUBJECT</label> <br>
+                <input type="text" id="subject" name="subject"><br> <br>
+
+                <label for="message_body">MESSAGE BODY</label> <br>
+                <input type="text" id="message_body" name="message_body"><br> <br>
+
+                <button type="button" class="sendNotificationBtn" id="sendNotificationBtn">SEND</button>
+                
+            </div>
+
+        </div>
+
+    </div>
+    <p></p>
+
 
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/logout.js"></script>
     <script type="module" src="js/search_studygroups.js"></script>
     <script type="module" src="js/search_modal.js"></script>
     <script type="module" src="js/myStudygroups.js"></script>
-    
+    <script type="module" src="js/my_notifications.js"></script>
+
+
 </body>
 
 </html>

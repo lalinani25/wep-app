@@ -15,6 +15,7 @@ console.log("test4")
 btn.addEventListener('click', async() => {
     modal.style.display = "block";
 
+    console.log(modal)
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";

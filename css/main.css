@@ -117,3 +117,26 @@ select {
 button[id='search_btn']:hover {
     background-color: #1c122b;
 }
+
+.notifications{
+    display: inline-block;
+    background-color:#7b6691;
+    border: #1c122b;
+    border-style:double;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: #1c122b;
+    padding: 10px;
+    margin: 40px;
+    text-align: center;
+    width: 40%;
+    white-space: nowrap;
+}
+
+.not_subject::before{
+    content: "SUBJECT: ";    
+}
+
+.not_body::before{
+    content: "MESSAGE: ";    
+}
