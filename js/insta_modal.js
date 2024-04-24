@@ -55,7 +55,7 @@ document.getElementById("save_insta").addEventListener('click', async function (
 
     let image_url = "https://thankful-plant-0f567c30f.4.azurestaticapps.net/images/study-buddy.jpg"
     console.log(image_url)
-    let caption = "New Study Group Created!"
+    let caption = `${u.username} created a new studygroup!`
     console.log(caption)
 
     const data = {
