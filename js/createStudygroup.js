@@ -1,6 +1,7 @@
 const create = document.querySelector('#create');
-const message = document.querySelector("p");
+const message = document.getElementById("p2");
 const token = localStorage.getItem("token");
+const user = localStorage.getItem("user");
 
 //creating the meeting array
 const meeting = [{}];
@@ -52,10 +53,6 @@ create.addEventListener('click', async function (event) {
         course_number: course_number,
     };
 
-    createStudygroup(studygroupData);
-
-});
-
 
 //fetching the data
 async function createStudygroup(studygroupData) {
@@ -74,8 +71,83 @@ async function createStudygroup(studygroupData) {
         });
 
         if (response.ok) {
-            mssg.innerHTML = 'Study group was successfully created!';
-            mssg.style.color = 'white';
+
+            //mssg.innerHTML = 'Study group was successfully created!';
+            //mssg.style.color = 'white';
+            let modal1 = document.getElementById("insta_post_modal");
+            modal1.style.display = "block";
+
+            console.log(modal1)
+
+            let u = JSON.parse(user)
+
+            document.getElementById("yes_btn").addEventListener('click', async () => {
+                console.log("yes")
+                if ((u.ig_username != "" || u.ig_password != "") && (u.ig_username != undefined || u.ig_password != undefined)) {
+                    const url = "https://studdy-buddy-api-server.azurewebsites.net/user/insta-post"
+                    console.log(url)
+
+                    let image_url = "https://thankful-plant-0f567c30f.4.azurestaticapps.net/images/study-buddy.jpg"
+                    console.log(image_url)
+                    let caption = `${u.username} created a new studygroup!`
+                    console.log(caption)
+
+                    const data = {
+                        image_url: image_url,
+                        caption: caption
+                    }
+                    console.log(data)
+
+                    const body = JSON.stringify(data)
+                    console.log(body)
+
+                    const options = {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": 'application/json',
+                            "Authorization": `Bearer ${token}`
+                        },
+                        body
+                    }
+
+                    console.log('calling fetch')
+
+                    let response = await fetch(url, options)
+
+                    console.log(response)
+                    console.log(response.status)
+
+                    console.log('fetch returned')
+
+                    if (response.status === 200) {
+                        console.log("Post to instagram successful!")
+                        location.reload()
+
+                    }
+                    else {
+                        console.log("failed to post to Instagram!")
+                    }
+                }
+                else {
+                    location.href = "insta_info.html"
+                }
+
+            })
+
+
+            document.getElementById("no_btn").addEventListener('click', async () => {
+                modal1.style.display = "none";
+                location.reload()
+
+            })
+            let span = document.getElementsByClassName("close")[0];
+            console.log("test2")
+
+            span.addEventListener('click', async () => {
+                modal.style.display = "none";
+            })
+
+
 
         } else {
             const errorData = await response.json();
@@ -87,3 +159,6 @@ async function createStudygroup(studygroupData) {
         mssg.style.color = 'red';
     }
 }
+
+createStudygroup(studygroupData);
+});

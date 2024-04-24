@@ -14,7 +14,7 @@ let array = []
 let my_array = []
 let notificationBtn = []
 let p_info = []
-
+let index
 search_btn.addEventListener('click', async function (event) {
 
     //fetching the data for studygroups
@@ -251,8 +251,11 @@ search_btn.addEventListener('click', async function (event) {
                                 console.log(data1[k])
                                 let p = []
                                 p = data1[k].participants
-                               p_info.push(p)
-                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + p._id + '" style="font-size:24px display:inline">&#9993;</button>'
+                                p_info.push(p)
+                                console.log(p_info)
+                                index = p_info.indexOf(p)
+                                console.log(index)
+                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + index + '" style="font-size:24px display:inline">&#9993;</button>'
                                 p.messageBtnId = 'notificationBtn' + p._id
                                 participant += '<p style=" display:inline" id = "p_name' + j + '" >' + p.username + '</p>' + p.messageBtn + ' <br><br>'
                             }
@@ -327,27 +330,28 @@ search_btn.addEventListener('click', async function (event) {
                         studygroup_modal += is_public
 
                         let o = data1[0].owner
-                        
-                        o.messageBtn = '<button style=" display:inline" class = "notificationBtn" id = "notificationBtn' + o._id  + '" style="font-size:24px display:inline">&#9993;</button>'
-                   /*     for(let m = 0; m < p_info.length; m++){
-                            console.log(p_info[m])
-                            console.log(o)
-                            if(p_info[m]._id == o._id){
-                                console.log("already there")
-                            }
-                            else{
-                                p_info.push(o)
-                            }
-                        }
-                        */
                         p_info.push(o)
+                        index = p_info.indexOf(o)
+                        o.messageBtn = '<button style=" display:inline" class = "notificationBtn" id = "notificationBtn' + index + '" style="font-size:24px display:inline">&#9993;</button>'
+                        /*     for(let m = 0; m < p_info.length; m++){
+                                 console.log(p_info[m])
+                                 console.log(o)
+                                 if(p_info[m]._id == o._id){
+                                     console.log("already there")
+                                 }
+                                 else{
+                                     p_info.push(o)
+                                 }
+                             }
+                             */
+                       
                         let owner = '<p class="owner" style=" display:inline" id = "owner_name' + j + '" >' + o.username + '</p>' + o.messageBtn + '<br>'
                         studygroup_modal += owner
-                        
-                        console.log(o)
-                       
 
-                        
+                        console.log(o)
+
+
+
 
                         participants = array[j].participants
 
@@ -374,7 +378,11 @@ search_btn.addEventListener('click', async function (event) {
                                 console.log(data1[k])
                                 let p = []
                                 p = data1[k].participants
-                                participant += '<p style=" display:inline" id = "p_name' + j + '" >' + p.username + '</p> <br><br>'
+                                p_info.push(p)
+                                index = p_info.indexOf(p)
+                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + index+ '" style="font-size:24px display:inline">&#9993;</button>'
+                                p.messageBtnId = 'notificationBtn' + p._id
+                                participant += '<p style=" display:inline" id = "p_name' + j + '" >' + p.username + '</p>' + p.messageBtn + '<br><br>'
                             }
 
                         }
@@ -383,20 +391,9 @@ search_btn.addEventListener('click', async function (event) {
                                 console.log(data1[k])
                                 let p = []
                                 p = data1[k].participants
-                               
-                               /* for(let m = 0; m < p_info.length; m++){
-                                    console.log(p_info[m])
-                                    console.log(p)
-                                    if(p_info[m]._id == p._id){
-                                        console.log("already there")
-                                    }
-                                    else{
-                                        p_info.push(p)
-                                    }
-                                }
-                                */
                                 p_info.push(p)
-                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + p._id + '" style="font-size:24px display:inline">&#9993;</button>'
+                                index = p_info.indexOf(p)
+                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + index + '" style="font-size:24px display:inline">&#9993;</button>'
                                 p.messageBtnId = 'notificationBtn' + p._id
                                 participant += '<p style=" display:inline"  id = "p_name' + j + '" >' + p.username + '</p>' + p.messageBtn + '<br>'
                             }
@@ -406,21 +403,22 @@ search_btn.addEventListener('click', async function (event) {
                                 console.log(data1[k])
                                 let p = []
                                 p = data1[k].participants
-                              /*  for(let m = 0; m < p_info.length; m++){
-                                    console.log(p_info[m])
-                                    console.log(p)
-                                    if(p_info[m]._id == p._id){
-                                        console.log("already there")
-                                    }
-                                    else{
-                                        p_info.push(p)
-                                    }
-                                }
-                                */
+                                /*  for(let m = 0; m < p_info.length; m++){
+                                      console.log(p_info[m])
+                                      console.log(p)
+                                      if(p_info[m]._id == p._id){
+                                          console.log("already there")
+                                      }
+                                      else{
+                                          p_info.push(p)
+                                      }
+                                  }
+                                  */
                                 p_info.push(p)
-                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + p._id + '" style="font-size:24px display:inline">&#9993;</button>'
+                                index = p_info.indexOf(p)
+                                p.messageBtn = '<button class = "notificationBtn" id = "notificationBtn' + index+ '" style="font-size:24px display:inline">&#9993;</button>'
                                 p.messageBtnId = 'notificationBtn' + p._id
-                                participant += '<p style=" display:inline" id = "p_name' + j + '" >' + p.username + '</p>'+ p.messageBtn + '<br><br>'
+                                participant += '<p style=" display:inline" id = "p_name' + j + '" >' + p.username + '</p>' + p.messageBtn + '<br><br>'
                             }
                         }
                         else if (!(participants.length === 0) && (is_User != true) && (array[j].is_public == false)) {
@@ -505,168 +503,145 @@ search_btn.addEventListener('click', async function (event) {
                         console.log("test-line 394")
                     }
                     console.log("test-line 396")
-
+                 
                 }
 
                 console.table(array)
 
                 console.log(data1)
 
-             function removeDuplicates() {
- 
-                    let jsonObject = p_info.map(JSON.stringify);
-                    let uniqueSet = new Set(jsonObject);
-                    let uniqueArray = Array.from(uniqueSet).map(JSON.parse);
-                    console.log(uniqueArray);
-                    p_info = uniqueArray
-                    
-                }
-              removeDuplicates();
+                /*
+                    function removeDuplicates() {
 
-              let value = p_info[1]
-             
-              
-              p_info = p_info.filter(function(item) {
-                  return item !== value
-              })
-
-              let value1 = p_info[4]
-              p_info = p_info.filter(function(item) {
-                return item !== value1
-              })
-                console.log(p_info)
-
-                //Message Modal
-                let modal = document.getElementById("message_modal");
-
-                // When the user clicks the button, open the modal 
-                for (let i = 0; i < p_info.length; i++) {
-
-                    let p = p_info[i]
-
-                    console.log(p)
-
-                    if (p.hasOwnProperty('messageBtn')) {
-                        let n = `notificationBtn${p._id}`
-                        let b = n.substring(15,39)
-                        console.log(b)
-                        let pd =  p._id
-                        console.log(pd)
-                    
-                        
+                        let jsonObject = p_info.map(JSON.stringify);
+                        let uniqueSet = new Set(jsonObject);
+                        let uniqueArray = Array.from(uniqueSet).map(JSON.parse);
+                        console.log(uniqueArray);
+                        p_info = uniqueArray
+    
+                    }
+                    removeDuplicates();
+                */
+                    console.log(p_info)
+    
+                    //Message Modal
+                    let modal = document.getElementById("message_modal");
+    
+                    // When the user clicks the button, open the modal 
+                    for (let i = 0; i < p_info.length; i++) {
+    
+                        let p = p_info[i]
+    
                         console.log(p)
-                        console.log(n)
-                        console.log(p_info)
-                        console.log(modal)
-
-                        document.getElementById(n).addEventListener('click', async () => {
-                            modal.style.display = "block";
-                           // const newButton = document.createElement('button');
-                           // newButton.textContent = 'SAVE';
-                           // newButton.setAttribute("id", `sendNotificationBtn${p._id}`)
-
-                           // let targetDiv = document.getElementById("info2");
-
-                            // Append the button to the target div
-                           // targetDiv.appendChild(newButton);
-
+    
+                        if (p.hasOwnProperty('messageBtn')) {
+                            let n = `notificationBtn${i}`
+                           // let b = n.substring(15, 39)
+                            console.log(n)
+                            let pd = p._id
+                            console.log(pd)
+    
+    
+                            console.log(p)
+                            console.log(n)
+                            console.log(p_info)
                             console.log(modal)
-                            window.onclick = function (event) {
-                                if (event.target == modal) {
-                                    modal.style.display = "none";
+    
+                            document.getElementById(n).addEventListener('click', async () => {
+                                modal.style.display = "block";
+                                
+                                console.log(modal)
+                                window.onclick = function (event) {
+                                    if (event.target == modal) {
+                                        modal.style.display = "none";
+                                    }
                                 }
-                            }
-                       
-
-
-
-                        console.log("test3")
-
-                        let subject
-                        let body
-                    
-                        document.getElementById("sendNotificationBtn").addEventListener('click', async function (event) {
-
-                            //getting values from form
-                            subject = document.querySelector('#subject').value;
-                            let user1 = JSON.parse(user)
-                            let sender = user1._id;
-                            console.log(sender)
-                            body = document.querySelector('#message_body').value;
-
-                            let receiver
-                           
-                           if(b == pd){
-                            receiver = p._id;
-                            
-
-                           }
-                            let notificationData = {
-                                sender: sender,
-                                receiver: receiver,
-                                subject: subject,
-                                body: body,
-                            };
-
-                            console.log(notificationData)
-                            createNotification(notificationData);
-                        
-
-                        });
-
-                
-                        //fetching the data
-                        async function createNotification(notificationData) {
-                            const mssg = document.querySelector("p");
-                            const url = "https://studdy-buddy-api-server.azurewebsites.net/notification";
-                            console.log("test")
-                            try {
+    
+    
+    
+    
                                 console.log("test3")
-                                const response = await fetch(url, {
-                                    method: "POST",
-                                    headers: {
-                                        "Content-Type": "application/json",
-                                        "Authorization": `Bearer ${token}`
-                                    },
-                                    body: JSON.stringify(notificationData)
+    
+                                let subject
+                                let body
+    
+                                document.getElementById(`sendNotificationBtn`).addEventListener('click', async function (event) {
+    
+                                    //getting values from form
+                                    subject = document.querySelector('#subject').value;
+                                    let user1 = JSON.parse(user)
+                                    let sender = user1._id;
+                                    console.log(sender)
+                                    body = document.querySelector('#message_body').value;
+    
+                                    let receiver
+    
+                                   // if (b == pd) {
+                                    receiver = p._id;
+    
+    
+                                   // }
+                                    let notificationData = {
+                                        sender: sender,
+                                        receiver: receiver,
+                                        subject: subject,
+                                        body: body,
+                                    };
+    
+                                    console.log(notificationData)
+                                    createNotification(notificationData);
+    
+    
                                 });
 
-                                if (response.ok) {
-                                    mssg.innerHTML = 'Notification was successfully sent!';
-                                    mssg.style.color = 'white';
-                                    location.reload;
-                                    
-
-                                } else {
-                                    const errorData = await response.json();
-                                    mssg.innerHTML = "Error: " + errorData.message;
-                                    mssg.style.color = 'red';
-                                }
-                            } catch (error) {
-                                mssg.innerHTML = "Error: An error occurred";
-                                mssg.style.color = 'red';
-                            }
+                            })
+    
                         }
-                    
-                    
-                    })
-                
-                    }
-
-            
+    
+    
                         let span = document.getElementsByClassName("close")[0];
                         console.log("test2")
-
+    
                         span.addEventListener('click', async () => {
                             modal.style.display = "none";
                         })
+    
+    
+                    }
+    
+                    //fetching the data
+                    async function createNotification(notificationData) {
+                        const mssg = document.querySelector("p");
+                        const url = "https://studdy-buddy-api-server.azurewebsites.net/notification";
+                        console.log("test")
+                        try {
+                            console.log("test3")
+                            const response = await fetch(url, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                    "Authorization": `Bearer ${token}`
+                                },
+                                body: JSON.stringify(notificationData)
+                            });
 
-                    
-                }
+                            if (response.ok) {
+                                mssg.innerHTML = 'Notification was successfully sent!';
+                                mssg.style.color = 'white';
+                                location.reload();
 
 
-
-
+                            } else {
+                                const errorData = await response.json();
+                                mssg.innerHTML = "Error: " + errorData.message;
+                                mssg.style.color = 'red';
+                            }
+                        } catch (error) {
+                            mssg.innerHTML = "Error: An error occurred";
+                            mssg.style.color = 'red';
+                        }
+                    }
+            
                 //Join Studygroup
 
                 for (let i = 0; i < array.length; i++) {
@@ -694,7 +669,85 @@ search_btn.addEventListener('click', async function (event) {
                                 })
 
                                 if (response.status === 200) {
-                                    location.reload()
+                                    let modal1 = document.getElementById("insta_post_modal");
+                                    modal1.style.display = "block";
+
+                                    console.log(modal1)
+                                    window.onclick = function (event) {
+                                        if (event.target == modal1) {
+                                            modal1.style.display = "none";
+                                        }
+                                    }
+
+                                    let u = JSON.parse(user)
+
+                                    document.getElementById("yes_btn").addEventListener('click', async () => {
+                                        console.log("yes")
+                                        if ((u.ig_username != "" || u.ig_password != "") && (u.ig_username != undefined || u.ig_password != undefined)) {
+                                            const url = "https://studdy-buddy-api-server.azurewebsites.net/user/insta-post"
+                                            console.log(url)
+
+                                            let image_url = "https://thankful-plant-0f567c30f.4.azurestaticapps.net/images/study-buddy.jpg"
+                                            console.log(image_url)
+                                            let caption = `${u.username} joined ${array[i].name} studygroup!`
+                                            console.log(caption)
+
+                                            const data = {
+                                                image_url: image_url,
+                                                caption: caption
+                                            }
+                                            console.log(data)
+
+                                            const body = JSON.stringify(data)
+                                            console.log(body)
+
+                                            const options = {
+                                                method: "POST",
+                                                headers: {
+                                                    "Content-Type": 'application/json',
+                                                    "Authorization": `Bearer ${token}`
+                                                },
+                                                body
+                                            }
+
+                                            console.log('calling fetch')
+
+                                            let response = await fetch(url, options)
+
+                                            console.log(response)
+                                            console.log(response.status)
+
+                                            console.log('fetch returned')
+
+                                            if (response.status === 200) {
+                                                console.log("Post to instagram successful!")
+                                                location.reload()
+                                            
+                                            }
+                                            else {
+                                                console.log("failed to post to Instagram!")
+                                            }
+                                        }
+                                        else {
+                                            location.href = "insta_info.html"
+                                        }
+
+                                    })
+
+
+                                    document.getElementById("no_btn").addEventListener('click', async () => {
+                                        modal1.style.display = "none";
+                                        location.reload()
+
+                                    })
+                                    let span = document.getElementsByClassName("close")[0];
+                                    console.log("test2")
+                
+                                    span.addEventListener('click', async () => {
+                                        modal.style.display = "none";
+                                    })
+                
+                                  //location.reload()
                                 } else {
                                     const errorData = await response.json();
                                     mssg.innerHTML = "Error: " + errorData.message;
@@ -868,7 +921,6 @@ search_btn.addEventListener('click', async function (event) {
                             let studygroupData = {
                                 name: name,
                                 is_public: is_public,
-                                max_participants: max_participants,
                                 start_date: start_date,
                                 end_date: end_date,
                                 meeting_times: meeting,
@@ -879,34 +931,40 @@ search_btn.addEventListener('click', async function (event) {
 
                             console.log(url)
                             console.log(studygroupData)
-                            console.log("test")
+                            // studygroupData = JSON.stringify(studygroupData)
+                            console.log(studygroupData)
 
                             try {
                                 console.log("Studygroup")
 
-                                let response = await fetch(url, {
-                                    method: 'PATCH',
+                                const options = {
+                                    method: "PATCH",
                                     headers: {
-                                        'Content-Type': 'application/json',
-                                        "Authorization": `Bearer ${token}`
+                                        "Authorization": `Bearer ${token}`,
+                                        "Content-Type": "application/json"
                                     },
-                                    body: JSON.stringify(studygroupData),
-                                })
+                                    body:JSON.stringify(studygroupData)
+                                }
 
-                                if (response.ok) {
+                                const response1 = await fetch(url,options)
+
+                                if (response1.ok) {
                                     mssg.innerHTML = 'Studygroup editted!';
                                     mssg.style.color = 'white'
                                     console.log(studygroupData)
+                                    console.log(url)
                                     location.reload()
 
                                 } else {
                                     const errorData = await response.json();
                                     mssg.innerHTML = "Error: " + errorData.message;
                                     mssg.style.color = 'red';
+                                 
                                 }
                             } catch (error) {
                                 mssg.innerHTML = "Error: An error occurred";
                                 mssg.style.color = 'red';
+                                
                             }
 
 

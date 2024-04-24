@@ -3,6 +3,7 @@
 <head>
     <title> Study Buddy</title>
     <link href="css/createStudygroup.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -11,7 +12,9 @@
         <li><a class="active" href="main.html">MAIN</a></li>
         <li><a href="createStudygroup.html">CREATE STUDYGROUP</a></li>
         <li style="float:right" id="logout" type="button"><a>LOG OUT</a></li>
-        <li style="float:right"><a href="search.html">STUDYGROUPS</a>
+        <li style="float:right" ><a href="search.html" id="std_button"><i style="font-size:24px" class="fa">&#xf0c0;</i></a></li>
+        <li style="float:right" id="myNotificationsButton" type="button"><a>&#128276;</a></li>
+        <li style="float:right" id="insta" type="button"><a href="insta_info.html"><i style="font-size:24px" class="fa">&#xf16d;</i></a></li>
     </ul>
 
     <div class="modal-content">
@@ -67,11 +70,9 @@
                 <label for="course_number">COURSE NUMBER</label> <br>
                 <input type="text" id="course_number" name="course_number"><br>
                 <br>
-                <button type="button" class="create" id="create">CREATE
-                </button>
-            </div>
+                <button type="button" class="create" id="create" data-toggle="modal" data-target="#myModal">CREATE</button>
         </form>
-        <p></p>
+        <p id = "p2"></p>
     </div>
 
     <div id="myModal" class="modal">
@@ -94,6 +95,23 @@
             </div>
         </div>
       
+    </div>
+
+    <div id="insta_post_modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal_content">
+            <span class="close">&times;</span>
+            <div id="info2" >
+                <h4 class="modal-title" style="text-align: center;">POST TO INSTAGRAM</h4>
+                <p>Do you want to post to Instagram?</p>
+
+                <button type="button" id="yes_btn" data-dismiss="modal">YES</button>
+                <button type="button" id="no_btn" data-dismiss="modal">NO</button>
+                
+            </div>
+
+        </div>
+
     </div>
 
     <script type="module" src="js/createStudygroup.js"></script>

@@ -2,7 +2,6 @@
 const signUp = document.querySelector('#signUp');
 const message = document.querySelector("p");
 
-
 signUp.addEventListener('click', async function (event) {
 
     const name = document.querySelector('#name').value;
@@ -34,7 +33,8 @@ signUp.addEventListener('click', async function (event) {
         majors: majors,
     };
 
-    createAccount(userData);
+
+    await createAccount(userData);
 
 });
 

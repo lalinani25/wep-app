@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <link rel="stylesheet" href="css/search.css">
+</head>
+
+<body>
+    <ul>
+        <li><a class="active" href="main.html">MAIN</a></li>
+        <li><a href="createStudygroup.html">CREATE STUDYGROUP</a></li>
+        <li style="float:right" id="logout" type="button"><a>LOG OUT</a></li>
+        <li style="float:right" ><a href="search.html" id="std_button"><i style="font-size:24px" class="fa">&#xf0c0;</i></a></li>
+        <li style="float:right" id="myNotificationsButton" type="button"><a>&#128276;</a></li>
+        <li style="float:right" id="insta" type="button"><a href="insta_info.html"><i style="font-size:24px" class="fa">&#xf16d;</i></a></li>
+
+    </ul>
+   
+   <!-- Instagram Modal -->
+
+    <p id = "p1"></p>
+    <!-- Modal content -->
+    <div class="modal_content">
+        <div id="info2">
+            <label for="insta_username">INSTAGRAM USERNAME</label> <br>
+            <input type="text" class="insta_username" id="insta_username" name="insta_username"><br> <br>
+
+            <label for="insta_password">INSTAGRAM PASSWORD</label> <br>
+            <input type="text" class = "insta_password" id="insta_password" name="insta_password"><br> <br>
+
+            <button type="button" class="save_insta" id="save_insta">SAVE</button>
+            <p id = "p2"></p>
+
+        </div>
+
+
+
+    <p></p>
+
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/logout.js"></script>
+    <script type="module" src="js/insta_modal.js"></script>
+
+
+</body>
+
+</html>

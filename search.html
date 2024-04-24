@@ -10,9 +10,9 @@
         <li><a class="active" href="main.html">MAIN</a></li>
         <li><a href="createStudygroup.html">CREATE STUDYGROUP</a></li>
         <li style="float:right" id="logout" type="button"><a>LOG OUT</a></li>
-        <li style="float:right"><a href="#"><i class="fa fa-fw fa-search" type="button" id="open_search"></i>SEARCH
-                STUDYGROUPS</a></li>
-        <li style="float:right" id="myNotificationsButton" type="button"><a>NOTIFICATIONS</a></li>
+        <li style="float:right"><a href="#"><i class="fa fa-fw fa-search" type="button" id="open_search"></i><i style="font-size:24px" class="fa">&#xf0c0;</i></a></li>
+                <li style="float:right" id="myNotificationsButton" type="button"><a>&#128276;</a></li>
+                <li style="float:right" id="insta" type="button"><a href="insta_info.html"><i style="font-size:24px" class="fa">&#xf16d;</i></a></li>
 
     </ul>
 
@@ -56,7 +56,6 @@
 
         <!-- Modal content -->
         <div class="modal_content">
-            <span class="close">&times;</span>
             <div id="info2" >
                 <label for="subject">SUBJECT</label> <br>
                 <input type="text" id="subject" name="subject"><br> <br>
@@ -71,6 +70,24 @@
         </div>
 
     </div>
+
+    <div id="insta_post_modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal_content">
+            <span class="close">&times;</span>
+            <div id="info2" >
+                <h4 class="modal-title">POST TO INSTAGRAM</h4>
+                <p>Do you want to post to Instagram?</p>
+
+                <button type="button" id="yes_btn" data-dismiss="modal">YES</button>
+                <button type="button" id="no_btn" data-dismiss="modal">NO</button>
+                
+            </div>
+
+        </div>
+
+    </div>
+
     <p></p>
 
 
@@ -80,6 +97,7 @@
     <script type="module" src="js/search_modal.js"></script>
     <script type="module" src="js/myStudygroups.js"></script>
     <script type="module" src="js/my_notifications.js"></script>
+   
 
 
 </body>
