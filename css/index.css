@@ -8,8 +8,12 @@ h1 {
 }
 
 img {
-    margin-left: 30%;
-    margin-top: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+    width: 40%;
+  
 }
 
 ul {
